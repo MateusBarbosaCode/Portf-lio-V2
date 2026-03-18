@@ -1,4 +1,4 @@
-/* --- RESET E BASE --- */
+/*  RESET E BASE  */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -12,10 +12,10 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Tema Claro */
+/* Tema Claro (Invertido pelo Script) */
 body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/* BARRA TOPO */
+/*BARRA TOPO*/
 .barra-topo {
     display: flex;
     flex-direction: column;
@@ -44,14 +44,13 @@ body.dark-mode .barra-topo { background-color: #fff; box-shadow: 0 2px 10px rgba
 #iconeBotao { width: 22px; filter: invert(1); }
 body.dark-mode #iconeBotao { filter: invert(0); }
 
-/* CONTEÚDO PRINCIPAL  */
+/*  CONTEÚDO PRINCIPAL */
 .conteudo-principal {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
-    width: 100%;
 }
 @media (min-width: 851px) { .conteudo-principal { margin-top: 90px; } }
 
@@ -60,26 +59,30 @@ body.dark-mode #iconeBotao { filter: invert(0); }
 
 .perfil img { width: 280px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
-/* --- TEXTOS (Resolvendo legibilidade no tema claro) --- */
-.titulo-monumental { font-size: 65px; line-height: 1.1; margin-bottom: 20px; font-weight: 900; }
+/*  CONFIGURAÇÃO DE TEXTOS (MODO ESCURO)  */
+.titulo-monumental { font-size: 65px; line-height: 1.1; margin-bottom: 20px; font-weight: 900; text-transform: uppercase; color: #fff; }
+.destaque-azul { color: #007bff; }
 .subtitulo-autoridade { font-size: 24px; line-height: 1.6; margin-bottom: 15px; color: #fff; }
 .texto-apoio { font-size: 18px; line-height: 1.8; color: #aaa; max-width: 600px; }
 
-/* Ajustes automáticos para o Tema Claro */
+/* AJUSTE DE TEXTOS (MODO CLARO)*/
+body.dark-mode .titulo-monumental { color: #111; }
 body.dark-mode .subtitulo-autoridade { color: #222; }
 body.dark-mode .texto-apoio { color: #555; }
 
 @media (max-width: 850px) {
-    .titulo-monumental { font-size: 40px; }
+    .titulo-monumental { font-size: 38px; }
     .subtitulo-autoridade { font-size: 20px; }
 }
 
 /*  BOTÕES  */
+.container-cv { margin-top: 30px; display: flex; justify-content: center; }
+@media (min-width: 851px) { .container-cv { justify-content: flex-start; } }
+
 .botao-cv {
     display: inline-block;
-    margin-top: 20px;
     padding: 12px 35px;
-    background-color: #007bff; /* Azul padrão */
+    background-color: #007bff;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
@@ -87,47 +90,18 @@ body.dark-mode .texto-apoio { color: #555; }
     transition: 0.3s;
 }
 .botao-cv:hover { transform: scale(1.05); background-color: #0056b3; }
-body.dark-mode .botao-cv { background-color: #007bff; color: #fff; }
 
-/*  CARDS DE TECNOLOGIA  */
-.habilidades { margin: 30px 0; }
-.cards-tecnologias { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
-@media (min-width: 851px) { .cards-tecnologias { justify-content: flex-start; } }
-
-.card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 12px;
-    border-radius: 10px;
-    width: 90px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: 0.3s;
-}
-.card img { width: 35px; height: 35px; margin-bottom: 5px; }
-.card p { font-size: 11px; font-weight: bold; color: #fff; }
-
-/* Cards no Tema Claro */
-body.dark-mode .card { background: #fff; border-color: #ddd; }
-body.dark-mode .card p { color: #333; }
-
-/* REDES SOCIAIS E RODAPÉ */
+/*  REDES SOCIAIS E RODAPÉ */
 .container-redes-rodape {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
     padding: 20px 0;
-    width: 100%;
 }
 
-.container-redes-rodape a img {
-    width: 40px !important;
-    height: 40px !important;
-    object-fit: contain;
-    transition: 0.3s;
-    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
-}
-.container-redes-rodape a img:hover { transform: translateY(-5px); }
+.container-redes-rodape img { width: 40px; transition: 0.3s; }
+.container-redes-rodape img:hover { transform: translateY(-5px); }
 
 .rodape {
     width: 100%;
@@ -135,5 +109,5 @@ body.dark-mode .card p { color: #333; }
     padding: 20px 0 40px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-body.dark-mode .rodape { border-top: 1px solid rgba(0, 0, 0, 0.1); }
+body.dark-mode .rodape { border-top-color: rgba(0, 0, 0, 0.1); }
 .rodape p { font-size: 14px; color: #888; }
