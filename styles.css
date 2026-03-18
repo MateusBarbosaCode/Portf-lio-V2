@@ -9,7 +9,7 @@ body {
 }
 body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/* --- HEADER E MENU (FORCEI O ESTILO CELULAR NO PC) --- */
+/* --- HEADER E MENU --- */
 .barra-topo {
     display: flex; flex-direction: column;
     align-items: center; padding: 20px; gap: 15px;
@@ -17,23 +17,24 @@ body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 .logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; text-transform: uppercase; }
 
 .links { 
-    display: flex; align-items: center; 
+    display: flex; align-items: center; /* Alinha o texto e a lua na mesma linha */
     gap: 20px; list-style: none; 
 }
 .links a { text-decoration: none; color: inherit; font-weight: 700; font-size: 16px; }
 
-/* --- BOTÃO DE TEMA (SEM FUNDO) --- */
+/* --- BOTÃO DE TEMA TRANSPARENTE --- */
 #meuBotao {
     background: transparent; border: none;
     cursor: pointer; display: flex; align-items: center; padding: 0;
 }
 #iconeBotao { 
     width: 22px; transition: 0.3s; 
-    filter: brightness(0) invert(1); /* Branco no escuro */
+    filter: brightness(0) invert(1); /* Branco no tema escuro */
 }
-body.dark-mode #iconeBotao { filter: brightness(0); /* Preto no claro */ }
+/* Quando o modo claro ativa, a lua fica preta */
+body.dark-mode #iconeBotao { filter: brightness(0); }
 
-/* --- CONTEÚDO (ESTILO MOBILE NO COMPUTADOR) --- */
+/* --- CONTEÚDO (ESTILO CELULAR NO PC) --- */
 .conteudo-principal {
     flex: 1; display: flex; flex-direction: column;
     align-items: center; justify-content: center; padding: 40px 20px;
@@ -59,9 +60,10 @@ body.dark-mode .rodape { border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
 .icone-rede { 
     width: 32px; transition: 0.3s; 
-    filter: brightness(0) invert(1); /* Branco no escuro */
+    filter: brightness(0) invert(1); /* Branco no tema escuro */
 }
-body.dark-mode .icone-rede { filter: brightness(0); /* Preto no claro */ }
+/* Quando o modo claro ativa, os ícones sociais ficam pretos */
+body.dark-mode .icone-rede { filter: brightness(0); }
 
 .icone-rede:hover {
     transform: translateY(-5px);
@@ -70,5 +72,3 @@ body.dark-mode .icone-rede { filter: brightness(0); /* Preto no claro */ }
 body.dark-mode .icone-rede:hover { filter: brightness(0) drop-shadow(0 0 8px #007bff); }
 
 .rodape p { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 1px; }
-
-/* REMOVIDO: Media queries que separavam os itens no PC, para manter tudo igual ao celular. */
