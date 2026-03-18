@@ -19,14 +19,25 @@ body {
     padding: 40px 20px;
 }
 
-/* --- RODAPÉ BONITO (FOOTER) --- */
+/* --- RODAPÉ (FOOTER) COM LINHA FINA --- */
 .rodape {
     padding: 30px 20px;
     text-align: center;
-    background-color: #080808; 
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #000; /* Fundo total preto */
+    
+    /* A LINHA FINA AQUI */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha branca com 10% de opacidade */
+    
+    margin-top: auto; /* Mantém o footer no final da página */
 }
 
+/* Ajuste da linha para o Modo Claro */
+body.dark-mode .rodape {
+    background-color: #f4f4f4;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Linha preta com 10% de opacidade */
+}
+
+/* Container dos ícones sociais dentro do rodapé */
 .container-redes-rodape {
     display: flex;
     justify-content: center;
@@ -34,24 +45,33 @@ body {
     margin-bottom: 15px;
 }
 
+/* Estilo dos ícones sociais */
 .icone-rede {
     width: 28px !important;
     height: 28px !important;
     object-fit: contain;
-    transition: 0.3s;
-    filter: brightness(0) invert(1); /* Ícones brancos no modo escuro */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0) invert(1); /* Ícones brancos no fundo preto */
 }
 
+/* Efeito de brilho ao passar o mouse */
 .icone-rede:hover {
     transform: translateY(-5px);
     filter: brightness(0) invert(1) drop-shadow(0 0 8px #007bff);
 }
 
-.rodape p {
-    font-size: 11px;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+/* Ajuste dos ícones no Modo Claro */
+body.dark-mode .icone-rede {
+    filter: none;
+}
+body.dark-mode .icone-rede:hover {
+    filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.5));
 }
 
-/* Restante do seu CSS de Header, Início e Sobre (Mantenha o que já estava funcionando) */
+/* Texto de Copyright */
+.rodape p {
+    font-size: 11px;
+    color: #555; /* Cor mais discreta para o texto */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
