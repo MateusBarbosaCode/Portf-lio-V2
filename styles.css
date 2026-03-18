@@ -1,4 +1,4 @@
-/*  RESET E BASE  */
+/* RESET E BASE*/
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -12,10 +12,10 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Tema Claro (Invertido pelo Script) */
+/* Tema Claro */
 body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/*BARRA TOPO*/
+/* BARRA TOPO */
 .barra-topo {
     display: flex;
     flex-direction: column;
@@ -35,7 +35,6 @@ body.dark-mode .barra-topo { background-color: #fff; box-shadow: 0 2px 10px rgba
 }
 
 .logo { font-size: 26px; font-weight: 900; text-transform: uppercase; color: #007bff; }
-.menu-central { display: flex; align-items: center; gap: 20px; }
 .links { display: flex; gap: 25px; list-style: none; }
 .links a { text-decoration: none; color: inherit; font-weight: 700; font-size: 18px; transition: 0.3s; }
 .links a:hover { color: #007bff; }
@@ -44,7 +43,7 @@ body.dark-mode .barra-topo { background-color: #fff; box-shadow: 0 2px 10px rgba
 #iconeBotao { width: 22px; filter: invert(1); }
 body.dark-mode #iconeBotao { filter: invert(0); }
 
-/*  CONTEÚDO PRINCIPAL */
+/* CONTEÚDO  */
 .conteudo-principal {
     flex: 1;
     display: flex;
@@ -54,52 +53,36 @@ body.dark-mode #iconeBotao { filter: invert(0); }
 }
 @media (min-width: 851px) { .conteudo-principal { margin-top: 90px; } }
 
-.perfil { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 40px; max-width: 1200px; }
-@media (min-width: 851px) { .perfil { flex-direction: row; text-align: left; } }
+/* CONFIGURAÇÃO DE TEXTOS (MODO ESCURO) */
+.titulo-monumental { font-size: 65px; line-height: 1.1; margin-bottom: 20px; font-weight: 900; text-transform: uppercase; color: #fff !important; }
+.subtitulo-autoridade { font-size: 24px; line-height: 1.6; margin-bottom: 15px; color: #fff !important; }
+.texto-apoio { font-size: 18px; line-height: 1.8; color: #aaa !important; max-width: 600px; }
+.destaque-azul { color: #007bff !important; }
 
-.perfil img { width: 280px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+/* --- AJUSTE DE TEXTOS (MODO CLARO) --- */
+body.dark-mode .titulo-monumental { color: #111 !important; }
+body.dark-mode .subtitulo-autoridade { color: #222 !important; }
+body.dark-mode .texto-apoio { color: #444 !important; }
 
-/*  CONFIGURAÇÃO DE TEXTOS (MODO ESCURO)  */
-.titulo-monumental { font-size: 65px; line-height: 1.1; margin-bottom: 20px; font-weight: 900; text-transform: uppercase; color: #fff; }
-.destaque-azul { color: #007bff; }
-.subtitulo-autoridade { font-size: 24px; line-height: 1.6; margin-bottom: 15px; color: #fff; }
-.texto-apoio { font-size: 18px; line-height: 1.8; color: #aaa; max-width: 600px; }
-
-/* AJUSTE DE TEXTOS (MODO CLARO)*/
-body.dark-mode .titulo-monumental { color: #111; }
-body.dark-mode .subtitulo-autoridade { color: #222; }
-body.dark-mode .texto-apoio { color: #555; }
-
-@media (max-width: 850px) {
-    .titulo-monumental { font-size: 38px; }
-    .subtitulo-autoridade { font-size: 20px; }
-}
-
-/*  BOTÕES  */
-.container-cv { margin-top: 30px; display: flex; justify-content: center; }
-@media (min-width: 851px) { .container-cv { justify-content: flex-start; } }
-
-.botao-cv {
-    display: inline-block;
-    padding: 12px 35px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 8px;
+/*  CARDS DE TECNOLOGIA  */
+.cards-tecnologias { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 10px;
+    width: 90px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: 0.3s;
 }
-.botao-cv:hover { transform: scale(1.05); background-color: #0056b3; }
+.card img { width: 35px; height: 35px; margin-bottom: 5px; }
+.card p { font-size: 11px; font-weight: bold; color: #fff; }
 
-/*  REDES SOCIAIS E RODAPÉ */
-.container-redes-rodape {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding: 20px 0;
-}
+body.dark-mode .card { background: #fff; border-color: #ddd; }
+body.dark-mode .card p { color: #333; }
 
+/*  REDES SOCIAIS E RODAPÉ  */
+.container-redes-rodape { display: flex; justify-content: center; gap: 30px; padding: 20px 0; }
 .container-redes-rodape img { width: 40px; transition: 0.3s; }
 .container-redes-rodape img:hover { transform: translateY(-5px); }
 
