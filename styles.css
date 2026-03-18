@@ -5,11 +5,11 @@ body {
     background-color: #000; color: #fff; 
     font-family: 'Segoe UI', sans-serif; 
     display: flex; flex-direction: column; min-height: 100vh;
-    text-align: center; transition: 0.3s;
+    transition: 0.3s;
 }
 body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/* --- HEADER E BOTÃO TEMA --- */
+/* --- HEADER --- */
 .barra-topo { padding: 20px; display: flex; flex-direction: column; align-items: center; }
 .logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; }
 .links { display: flex; align-items: center; gap: 15px; list-style: none; margin-top: 10px; }
@@ -19,44 +19,34 @@ body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 #iconeBotao { width: 22px; filter: brightness(0) invert(1); }
 body.dark-mode #iconeBotao { filter: brightness(0); }
 
-/* --- CONTEÚDO PRINCIPAL --- */
-.conteudo-principal { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; }
+/* --- CONTEÚDO ADAPTÁVEL (PC vs MOBILE) --- */
+.conteudo-principal { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
 
-/* AJUSTE DA FOTO (150px fixo para Mobile e PC) */
-.foto-perfil { 
-    width: 150px; 
-    height: 150px; 
-    border-radius: 15px; 
-    object-fit: cover; 
-    margin-bottom: 15px;
+.secao-perfil { 
+    display: flex; flex-direction: row; /* Lado a lado no PC */
+    align-items: center; gap: 40px; text-align: left; max-width: 900px;
 }
 
-.titulo-monumental { font-size: 28px; font-weight: 900; }
+.foto-perfil { width: 180px; height: 180px; border-radius: 15px; object-fit: cover; }
+.titulo-monumental { font-size: 38px; font-weight: 900; }
 .destaque-azul { color: #007bff; }
 
-/* ESTILO DO BOTÃO DO CURRÍCULO */
+/* BOTÃO CURRÍCULO */
 .container-cv { margin-top: 20px; }
 .botao-cv {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: #007bff;
-    color: #fff !important;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: 0.3s;
+    display: inline-block; padding: 12px 30px;
+    background-color: #007bff; color: #fff !important;
+    text-decoration: none; font-weight: bold; border-radius: 8px;
 }
-.botao-cv:hover { background-color: #0056b3; transform: scale(1.05); }
 
-/* --- ÍCONES SOCIAIS (COR ORIGINAL) --- */
-.icone-rede { 
-    width: 35px; 
-    height: 35px;
-    filter: none !important; 
-    transition: 0.3s;
+/* MOBILE - TUDO CENTRALIZADO E EMPILHADO */
+@media (max-width: 768px) {
+    .secao-perfil { flex-direction: column; text-align: center; gap: 20px; }
+    .titulo-monumental { font-size: 28px; }
 }
-.icone-rede:hover { transform: translateY(-5px); }
 
-/* --- RODAPÉ --- */
-.rodape { padding: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+/* --- ÍCONES SOCIAIS (CORES ORIGINAIS) --- */
 .container-redes { display: flex; justify-content: center; gap: 30px; margin-bottom: 15px; }
+.icone-rede { width: 32px; filter: none !important; }
+
+.rodape { padding: 30px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; }
