@@ -12,7 +12,7 @@ body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
 /* --- HEADER --- */
 .barra-topo { padding: 20px; display: flex; flex-direction: column; align-items: center; }
-.logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; text-transform: uppercase; }
+.logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; }
 .links { display: flex; align-items: center; gap: 15px; list-style: none; margin-top: 10px; }
 .links a { text-decoration: none; color: inherit; font-weight: 700; }
 
@@ -21,49 +21,46 @@ body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 body.dark-mode #iconeBotao { filter: brightness(0); }
 
 /* --- CONTEÚDO PRINCIPAL --- */
-.conteudo-principal { 
-    flex: 1; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; 
-    padding: 40px 20px; text-align: center; 
-}
-
-/* Layout do Início (PC) */
-.secao-perfil { 
-    display: flex; flex-direction: row; 
-    align-items: center; gap: 40px; text-align: left; 
-    max-width: 900px; 
-}
-
+.conteudo-principal { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; }
+.secao-perfil { display: flex; flex-direction: row; align-items: center; gap: 40px; text-align: left; max-width: 900px; }
 .foto-perfil { width: 180px; height: 180px; border-radius: 15px; object-fit: cover; }
 
-/* Títulos e Textos */
 .titulo-monumental { font-size: 38px; font-weight: 900; }
+.titulo-branco-puro { font-size: 38px; font-weight: 900; color: #fff !important; margin-bottom: 20px; }
+body.dark-mode .titulo-branco-puro { color: #1a1a1a !important; }
 .destaque-azul { color: #007bff; }
 
-/* --- BOTÃO CURRÍCULO (AZUL) --- */
 .container-cv { margin-top: 25px; }
-.botao-cv { 
-    display: inline-block; padding: 12px 30px; 
-    background-color: #007bff; color: #fff !important; 
-    text-decoration: none; font-weight: bold; border-radius: 8px; 
-    transition: 0.3s; 
-}
+.botao-cv { display: inline-block; padding: 12px 30px; background-color: #007bff; color: #fff !important; text-decoration: none; font-weight: bold; border-radius: 8px; transition: 0.3s; }
 .botao-cv:hover { background-color: #0056b3; }
 
-/* --- RODAPÉ CENTRALIZADO (O QUE VOCÊ PEDIU AGORA) --- */
+/* --- CARDS TECNOLOGIAS --- */
+.cards-tecnologias { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 20px; width: 100%; }
+.card { background: #1a1a1a; padding: 15px; border-radius: 12px; width: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+body.dark-mode .card { background: #fff; border: 1px solid #ddd; }
+.card img, .icone-rede { filter: none !important; } 
+
+/* --- RODAPÉ CONSERTADO (CENTRALIZAÇÃO TOTAL) --- */
 .rodape { 
     padding: 30px 20px; 
     border-top: 1px solid rgba(255,255,255,0.1); 
     display: flex;
     flex-direction: column; /* Empilha ícones e texto */
-    align-items: center;    /* Centraliza tudo horizontalmente */
+    align-items: center;    /* Centraliza horizontalmente */
     justify-content: center;
-    gap: 15px;              /* Espaço entre ícones e o texto */
+    width: 100%;            /* Garante largura total para centralizar */
     margin-top: auto;
 }
 
-.container-redes { display: flex; justify-content: center; gap: 30px; }
-.icone-rede { width: 32px; filter: none !important; transition: 0.3s; }
+.container-redes { 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    margin-bottom: 15px; 
+    width: 100%;
+}
+
+.icone-rede { width: 32px; transition: 0.3s; }
 .icone-rede:hover { transform: translateY(-5px); }
 
 .rodape p { 
@@ -71,43 +68,21 @@ body.dark-mode #iconeBotao { filter: brightness(0); }
     color: #fff; 
     text-align: center; 
     margin: 0; 
+    width: 100%;
 }
+
 body.dark-mode .rodape p { color: #1a1a1a; }
-
-/* ============================================================
-   ESTILOS EXCLUSIVOS PARA SOBRE MIM E CONTATO
-   ============================================================ */
-
-/* Títulos 100% Brancos */
-.titulo-monumental-sobre, 
-.titulo-monumental-contato,
-.titulo-branco-puro { 
-    font-size: 38px; font-weight: 900; 
-    color: #fff !important; margin-bottom: 20px; 
-    text-align: center;
-}
-body.dark-mode .titulo-monumental-sobre,
-body.dark-mode .titulo-monumental-contato,
-body.dark-mode .titulo-branco-puro { color: #1a1a1a !important; }
-
-/* Cards de Tecnologia */
-.cards-tecnologias { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
-.card { 
-    background: #1a1a1a; padding: 15px; border-radius: 12px; 
-    width: 130px; display: flex; flex-direction: column; 
-    align-items: center; justify-content: center;
-}
-body.dark-mode .card { background: #fff; border: 1px solid #ddd; }
-.card img { width: 50px; margin-bottom: 10px; filter: none !important; }
-.card p { font-size: 14px; font-weight: 600; text-transform: uppercase; }
-
-/* Estilo de Contato */
-.info-contato p { font-size: 20px; margin-bottom: 10px; }
-.destaque-azul-contato { color: #007bff; font-weight: 700; margin-right: 5px; }
 
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
     .secao-perfil { flex-direction: column; text-align: center; }
-    .titulo-monumental, .titulo-monumental-sobre, .titulo-monumental-contato { font-size: 28px; }
-    .card { width: 45%; max-width: 150px; }
+    .titulo-monumental { font-size: 28px; }
+    .card { width: 45%; max-width: 160px; }
 }
+
+/* --- ESTILOS SOBRE E CONTATO --- */
+.sobre-mim-wrapper, .contato-wrapper { display: flex; flex-direction: column; align-items: center; width: 100%; }
+.titulo-monumental-sobre, .titulo-monumental-contato { font-size: 36px; font-weight: 800; text-transform: uppercase; color: #fff; margin-bottom: 20px; text-align: center; }
+.texto-apresentacao { font-size: 18px; line-height: 1.6; color: #ccc; margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; }
+.info-contato p { font-size: 20px; color: #ccc; margin-bottom: 15px; }
+.destaque-azul-contato { color: #007bff; font-weight: 700; }
