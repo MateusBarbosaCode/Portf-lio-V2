@@ -150,3 +150,53 @@ body.dark-mode .card { background: #fff; border: 1px solid #ddd; }
         max-width: 160px;
     }
 }
+
+/* ============================================================
+   ESTILOS EXCLUSIVOS PARA A PÁGINA DE CONTATO
+   ============================================================ */
+
+/* Centralização do container de contato */
+.contato-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Título Branco conforme a foto */
+.titulo-monumental-contato {
+    font-size: 42px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff !important; /* Sempre branco conforme o print */
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+/* Estilo das informações de contato */
+.info-contato p {
+    font-size: 20px;
+    color: #ccc; /* Texto das informações em cinza claro */
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Azul específico para os rótulos Email e Local */
+.destaque-azul-contato {
+    color: #007bff; /* Azul vibrante conforme a foto */
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+/* Ajuste Mobile para Contato */
+@media (max-width: 768px) {
+    .titulo-monumental-contato {
+        font-size: 32px;
+    }
+    .info-contato p {
+        font-size: 16px;
+    }
+}
