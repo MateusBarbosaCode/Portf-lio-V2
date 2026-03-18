@@ -1,4 +1,4 @@
-/* RESET E BASE  */
+/* --- RESET --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -9,70 +9,40 @@ body {
     background-color: #000;
     color: #fff;
     overflow-x: hidden;
-    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Tema Claro (Invertido pelo Script ) */
 body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/*  BARRA TOPO (CABEÇALHO)  */
+/* --- HEADER --- */
 .barra-topo {
     display: flex;
-    flex-direction: column; /* Padrão para mobile */
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 20px 0;
     background-color: #111;
     width: 100%;
     gap: 15px;
-    z-index: 1000;
 }
-
+@media (min-width: 851px) {
+    .barra-topo { flex-direction: row; justify-content: space-between; padding: 0 10%; height: 90px; position: fixed; top: 0; z-index: 1000; }
+}
 body.dark-mode .barra-topo { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
 
-/* Ajuste para COMPUTADOR (Telas largas) */
-@media (min-width: 851px) {
-    .barra-topo { flex-direction: row; justify-content: space-between; padding: 0 10%; height: 90px; position: fixed; top: 0; }
-}
-
 .logo { font-size: 26px; font-weight: 900; text-transform: uppercase; color: #007bff; }
+.links { display: flex; gap: 25px; list-style: none; }
+.links a { text-decoration: none; color: inherit; font-weight: 700; font-size: 18px; }
 
-/* O SEGREDOD DO ALINHAMENTO DO BOTÃO NO PC */
-.menu-central {
-    display: flex;
-    align-items: center; /* Alinha verticalmente os links e o botão */
-    gap: 30px; /* Espaço entre o menu e o botão de tema */
-    list-style: none; /* Garante que nenhuma lista de links sofra interferência */
-}
+#meuBotao { background: transparent; border: none; cursor: pointer; }
+#iconeBotao { width: 22px; filter: invert(1); }
+body.dark-mode #iconeBotao { filter: invert(0); }
 
-/* Mantém os links em linha */
-.links {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.links a { text-decoration: none; color: inherit; font-weight: 700; font-size: 18px; transition: 0.3s; }
-.links a:hover { color: #007bff; }
-
-/* Inversão do Ícone de Tema */
-#iconeBotao { filter: invert(1); } /* Lua branca no fundo preto */
-body.dark-mode #iconeBotao { filter: invert(0); } /* Lua/Sol escuro no fundo branco */
-
-/* CONTEÚDO PRINCIPAL (LAYOUT MONUMENTAL) */
+/* --- CONTEÚDO PRINCIPAL --- */
 .conteudo-principal {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px 5% 40px; /* Mais padding no topo para não bater no menu fixo */
-}
-
-/* Ajuste para Mobile */
-@media (max-width: 850px) {
-    .conteudo-principal { padding: 40px 20px; }
+    padding: 100px 20px 40px; /* Espaço para o header fixo */
 }
 
 .perfil { 
@@ -80,31 +50,27 @@ body.dark-mode #iconeBotao { filter: invert(0); } /* Lua/Sol escuro no fundo bra
     flex-direction: column; 
     align-items: center; 
     text-align: center; 
-    gap: 40px; 
+    gap: 50px; 
     max-width: 1100px; 
-    width: 100%;
 }
 
-/* COMPUTADOR (Lado a Lado) */
 @media (min-width: 851px) { 
-    .perfil { flex-direction: row; text-align: left; gap: 60px; } 
-    .texto { flex: 1; max-width: 700px; }
+    .perfil { flex-direction: row; text-align: left; } 
 }
 
 .perfil img { 
     width: 280px; 
-    height: auto;
     border-radius: 20px; 
     box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2); 
 }
 
-/* CONFIGURAÇÃO DE TEXTOS (MODO ESCURO - PADRÃO)  */
+/* --- TEXTOS --- */
 .titulo-monumental { font-size: 65px; line-height: 1.1; margin-bottom: 20px; font-weight: 900; text-transform: uppercase; color: #fff !important; }
 .destaque-azul { color: #007bff !important; }
 .subtitulo-autoridade { font-size: 24px; line-height: 1.5; margin-bottom: 15px; color: #fff !important; }
 .texto-apoio { font-size: 18px; line-height: 1.7; color: #aaa !important; max-width: 600px; }
 
-/* Ajustes Tema Claro (Não somem mais) */
+/* Ajustes Tema Claro */
 body.dark-mode .titulo-monumental { color: #111 !important; }
 body.dark-mode .subtitulo-autoridade { color: #222 !important; }
 body.dark-mode .texto-apoio { color: #555 !important; }
@@ -114,32 +80,22 @@ body.dark-mode .texto-apoio { color: #555 !important; }
     .subtitulo-autoridade { font-size: 20px; }
 }
 
-/* BOTÕES  */
-.container-cv { margin-top: 30px; display: flex; justify-content: center; }
-@media (min-width: 851px) { .container-cv { justify-content: flex-start; } }
-
+/* --- BOTÕES --- */
+.container-cv { margin-top: 30px; }
 .botao-cv {
     display: inline-block;
-    padding: 12px 35px;
+    padding: 15px 35px;
     background-color: #007bff;
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     font-weight: 700;
     border-radius: 8px;
     transition: 0.3s;
 }
-.botao-cv:hover { transform: scale(1.05); background-color: #0056b3; }
+.botao-cv:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4); }
 
-/* RODAPÉ */
+/* --- RODAPÉ --- */
 .container-redes-rodape { display: flex; justify-content: center; gap: 30px; padding: 20px 0; }
-.container-redes-rodape img { width: 40px; transition: 0.3s; }
-.container-redes-rodape img:hover { transform: translateY(-5px); }
-
-.rodape {
-    width: 100%;
-    text-align: center;
-    padding: 20px 0 40px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-body.dark-mode .rodape { border-top-color: rgba(0, 0, 0, 0.1); }
+.container-redes-rodape img { width: 40px; }
+.rodape { text-align: center; padding: 20px 0 40px; border-top: 1px solid rgba(255,255,255,0.1); }
 .rodape p { font-size: 14px; color: #888; }
