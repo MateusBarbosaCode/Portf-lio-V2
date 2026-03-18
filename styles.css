@@ -1,4 +1,4 @@
-/* --- CONFIGURAÇÕES BASE --- */
+/* --- BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -9,110 +9,40 @@ body {
 }
 body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/* --- HEADER E MENU ALINHADO --- */
-.barra-topo {
-    display: flex; flex-direction: column;
-    align-items: center; padding: 20px; gap: 15px;
-}
-.logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; text-transform: uppercase; }
+/* --- HEADER (BOTÃO AO LADO DO CONTATO) --- */
+.barra-topo { padding: 20px; display: flex; flex-direction: column; align-items: center; }
+.logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; }
 
 .links { 
-    display: flex; align-items: center; 
-    gap: 20px; list-style: none; 
+    display: flex; align-items: center; justify-content: center; 
+    gap: 15px; list-style: none; margin-top: 10px;
 }
 .links a { text-decoration: none; color: inherit; font-weight: 700; font-size: 16px; }
 
-/* --- BOTÃO DE TEMA TRANSPARENTE E INTELIGENTE --- */
-#meuBotao {
-    background: transparent; border: none;
-    cursor: pointer; display: flex; align-items: center; padding: 0;
-}
-#iconeBotao { 
-    width: 22px; transition: 0.3s; 
-    filter: brightness(0) invert(1); /* Branco no escuro (Padrão) */
-}
-/* NO MODO CLARO, A LUA FICA PRETA */
+.botao-tema-limpo { background: transparent !important; border: none; cursor: pointer; padding: 0; display: flex; }
+#iconeBotao { width: 22px; filter: brightness(0) invert(1); transition: 0.3s; }
 body.dark-mode #iconeBotao { filter: brightness(0); }
 
-/* --- CONTEÚDO PRINCIPAL --- */
-.conteudo-principal {
-    flex: 1; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; padding: 40px 20px;
-}
-
-/* --- INÍCIO: LAYOUT DA FOTO 2 (CENTRALIZADO E LIMPO) --- */
-.secao-perfil-inicio { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+/* --- CONTEÚDO --- */
+.conteudo-principal { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; }
 .foto-perfil-inicio { width: 150px; height: 150px; border-radius: 15px; object-fit: cover; }
-.titulo-monumental-inicio { font-size: 28px; font-weight: 900; }
-.subtitulo-autoridade-inicio { font-size: 16px; margin: 10px 0; font-weight: normal; }
-.texto-apoio-inicio { font-size: 14px; color: #888; }
-.botao-cv-inicio {
-    display: inline-block; padding: 12px 25px; background: #007bff;
-    color: #fff !important; text-decoration: none; border-radius: 8px;
-    font-weight: bold; margin-top: 20px;
-}
+.titulo-monumental-inicio { font-size: 28px; font-weight: 900; margin-top: 15px; }
+.destaque-azul { color: #007bff; }
+.botao-cv-inicio { display: inline-block; padding: 12px 25px; background: #007bff; color: #fff !important; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 20px; }
 
-/* --- SOBRE MIM E TECNOLOGIAS (CORES REAIS) --- */
-.pagina-centralizada { text-align: center; }
-.titulo-sobre-branco { color: #fff !important; font-size: 32px; font-weight: 900; margin-bottom: 20px; }
-body.dark-mode .titulo-sobre-branco { color: #1a1a1a !important; }
-
-/* Container que o CSS vai colocar na horizontal no PC */
-.cards-tecnologias { 
-    display: flex; 
-    flex-wrap: wrap; /* Em celular, empilha se não couber */
-    justify-content: center; 
-    gap: 15px; 
-    margin: 25px auto; 
-    max-width: 100%; /* Permite ocupar a largura toda */
-}
-
-.card { 
-    background: #1a1a1a; 
-    padding: 15px; 
-    border-radius: 10px; 
-    width: 110px; /* Largura fixa para manter o padrão */
-    text-align: center;
-}
+/* --- TECNOLOGIAS (CORES REAIS) --- */
+.cards-tecnologias { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 400px; margin-top: 20px; }
+.card { background: #1a1a1a; padding: 15px; border-radius: 10px; width: 100px; }
 body.dark-mode .card { background: #fff; border: 1px solid #ddd; }
+.card img { width: 40px; filter: none !important; } /* CORES REAIS SEMPRE */
 
-.card img { 
-    width: 45px; 
-    filter: none !important; /* BLINDADO: MANTÉM AS CORES REAIS */
-}
-.card p { font-size: 12px; margin-top: 8px; color: inherit; }
-
-/* --- RODAPÉ E ÍCONES SOCIAIS ADAPTÁVEIS --- */
-.rodape {
-    padding: 30px 20px; margin-top: auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-body.dark-mode .rodape { border-top: 1px solid rgba(0, 0, 0, 0.1); }
+/* --- RODAPÉ (ÍCONES ORIGINAIS) --- */
+.rodape { padding: 30px 20px; margin-top: auto; border-top: 1px solid rgba(255, 255, 255, 0.1); }
 .container-redes-rodape { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
 
 .icone-rede { 
-    width: 32px; transition: 0.3s; 
-    filter: brightness(0) invert(1); /* Branco no escuro (Padrão) */
+    width: 32px; 
+    filter: none !important; /* ISSO GARANTE A COR ORIGINAL DO IG, LINKEDIN E GITHUB */
+    transition: 0.3s; 
 }
-/* NO MODO CLARO, OS ÍCONES SOCIAIS FICAM PRETOS */
-body.dark-mode .icone-rede { filter: brightness(0); }
-
-.icone-rede:hover {
-    transform: translateY(-5px);
-    filter: brightness(0) invert(1) drop-shadow(0 0 8px #007bff);
-}
-body.dark-mode .icone-rede:hover { filter: brightness(0) drop-shadow(0 0 8px #007bff); }
-
-.rodape p { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 1px; }
-
-/* --- AJUSTES DESKTOP (PC) --- */
-@media (min-width: 851px) {
-    .links { gap: 30px; }
-    /* No PC, a secao perfil se espalha para o layout de desktop */
-    .secao-perfil-inicio { flex-direction: row; gap: 50px; max-width: 1000px; padding: 50px 0; }
-    .foto-perfil-inicio { width: 220px; height: 220px; }
-    .titulo-monumental-inicio { font-size: 60px; }
-    
-    /* MANTÉM AS TECNOLOGIAS NA HORIZONTAL NO PC */
-    .cards-tecnologias { flex-wrap: nowrap; gap: 20px; }
-}
+.icone-rede:hover { transform: translateY(-5px); }
