@@ -26,8 +26,8 @@ body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 }
 body.dark-mode .barra-topo { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
 
-/* Logo sempre azul em qualquer dispositivo */
-.logo-link-azul {
+/* Logo sempre azul conforme a foto */
+.logo-azul {
     font-size: 26px;
     font-weight: 900;
     text-transform: uppercase;
@@ -43,31 +43,29 @@ body.dark-mode .barra-topo { background-color: #fff; box-shadow: 0 2px 10px rgba
 #iconeBotao { width: 22px; filter: invert(1); }
 body.dark-mode #iconeBotao { filter: invert(0); }
 
-/* --- CONTEÚDO PRINCIPAL (MOBILE FIRST - CELULAR) --- */
+/* --- CONTEÚDO PRINCIPAL (CENTRALIZAÇÃO TOTAL) --- */
 .conteudo-principal {
     flex: 1;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    flex-direction: column; 
+    align-items: center;    /* Centraliza nas laterais */
+    justify-content: center; /* Centraliza no meio da altura */
+    text-align: center;      /* Alinha o texto no meio */
     padding: 40px 20px;
 }
 
-.perfil { display: flex; flex-direction: column; align-items: center; gap: 30px; }
-.perfil img { width: 250px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2); }
-
-/* Textos adaptáveis */
-.titulo-monumental { font-size: 38px; font-weight: 900; color: #fff; text-transform: uppercase; }
-.subtitulo-autoridade { font-size: 20px; color: #fff; margin: 15px 0; }
-.texto-apoio { font-size: 16px; color: #aaa; max-width: 600px; }
+/* Títulos e Textos */
+.titulo-monumental { font-size: 38px; font-weight: 900; color: #fff; margin-bottom: 20px; }
+.subtitulo-autoridade { font-size: 20px; color: #fff; margin-bottom: 15px; max-width: 800px; }
+.texto-apoio { font-size: 16px; color: #aaa; max-width: 750px; line-height: 1.6; }
 .destaque-azul { color: #007bff !important; }
 
+/* Cores do modo claro */
 body.dark-mode .titulo-monumental, 
 body.dark-mode .subtitulo-autoridade { color: #111; }
 body.dark-mode .texto-apoio { color: #555; }
 
-/* --- TECNOLOGIAS (RESPONSIVO) --- */
+/* --- HABILIDADES (TECNOLOGIAS) --- */
 .habilidades { width: 100%; padding: 40px 0; }
 .titulo-habilidades { font-size: 14px; color: #007bff; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px; }
 
@@ -75,51 +73,38 @@ body.dark-mode .texto-apoio { color: #555; }
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .card {
     background: rgba(255, 255, 255, 0.05);
-    padding: 12px;
-    border-radius: 10px;
-    width: 90px;
+    padding: 15px;
+    border-radius: 12px;
+    width: 100px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .card p { font-size: 11px; font-weight: bold; color: #fff; margin-top: 8px; }
 body.dark-mode .card { background: #fff; border-color: #ddd; }
 body.dark-mode .card p { color: #333; }
 
-/* --- BOTÃO CV --- */
-.botao-cv {
-    display: inline-block;
-    padding: 12px 35px;
-    background-color: #007bff;
-    color: #fff !important;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-
-/* --- AJUSTES EXCLUSIVOS PARA COMPUTADOR (PC) --- */
+/* --- AJUSTES EXCLUSIVOS PC (Acima de 851px) --- */
 @media (min-width: 851px) {
-    .barra-topo { flex-direction: row; justify-content: space-between; padding: 0 10%; height: 90px; position: fixed; top: 0; }
+    .barra-topo { flex-direction: row; justify-content: space-between; padding: 0 10%; height: 90px; position: fixed; top: 0; z-index: 1000; }
     
-    .conteudo-principal { padding-top: 130px; text-align: center; }
+    .conteudo-principal { padding-top: 130px; min-height: 80vh; }
 
-    /* No Início, foto ao lado do texto */
+    /* No Início, foto ao lado do texto. Nas outras, mantém centralizado */
     .perfil { flex-direction: row; text-align: left; gap: 60px; max-width: 1100px; }
-    .titulo-monumental { font-size: 65px; }
-    .subtitulo-autoridade { font-size: 24px; }
-
-    /* Tecnologias sempre na horizontal no PC */
-    .cards-tecnologias { flex-direction: row; flex-wrap: nowrap; gap: 25px; }
     
-    /* Centraliza o conteúdo das páginas Sobre e Contato */
-    .conteudo-principal p { margin: 15px auto; }
+    .titulo-monumental { font-size: 60px; }
+    .subtitulo-autoridade { font-size: 26px; }
+    .texto-apoio { font-size: 18px; }
+
+    /* Tecnologias na horizontal no PC */
+    .cards-tecnologias { flex-wrap: nowrap; gap: 30px; }
 }
 
 /* --- RODAPÉ --- */
-.container-redes-rodape { display: flex; justify-content: center; gap: 30px; padding: 20px; }
+.container-redes-rodape { display: flex; justify-content: center; gap: 30px; padding: 30px 20px; }
 .container-redes-rodape img { width: 35px; }
-.rodape { text-align: center; padding: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: #888; }
+.rodape { text-align: center; padding: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #888; font-size: 13px; }
