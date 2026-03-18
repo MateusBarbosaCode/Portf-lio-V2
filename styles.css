@@ -109,7 +109,7 @@ body.dark-mode .texto-apoio { color: #555; }
     /* Estilos das páginas Sobre e Contato no PC */
     .pagina-centralizada { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 80vh; }
     .pagina-centralizada .texto-branco { color: #ffffff !important; margin: 0 auto; }
-    body.dark-mode .pagina-centralizada .texto-branco { color: #1a1a1a !important; }
+    body.dark-mode .pagina-centralizada .texto-branco { color: #ffffff !important; }
     
     /* Trava de ícones de contato */
     .redes-sociais-contato { display: flex; justify-content: center; gap: 30px; margin-top: 25px; }
