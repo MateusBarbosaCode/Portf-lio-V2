@@ -1,56 +1,102 @@
-/* --- BASE E TEMA --- */
+/* --- CONFIGURAÇÕES BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: #000; color: #fff;
+    background-color: #000; color: #fff; /* Fundo preto padrão */
     font-family: 'Segoe UI', sans-serif;
     display: flex; flex-direction: column;
     min-height: 100vh; text-align: center; transition: 0.3s;
 }
-/* No Modo Escuro (padrão), os títulos já são brancos pelo body */
-body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/* --- HEADER E ALINHAMENTO DO BOTÃO --- */
-.barra-topo { padding: 20px; display: flex; flex-direction: column; align-items: center; }
-.logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; }
-
-.links { 
-    display: flex; align-items: center; justify-content: center; 
-    gap: 15px; list-style: none; margin-top: 10px;
+/* CLASSE MESTRE PARA FORÇAR FUNDO BRANCO (SOBRE E CONTATO) */
+body.pagina-branca {
+    background-color: #fff !important;
+    color: #1a1a1a !important;
 }
+
+/* MODO CLARO GLOBAL (PELA LUA) */
+body.dark-mode:not(.pagina-branca) { 
+    background-color: #f4f4f4; 
+    color: #1a1a1a; 
+}
+
+/* --- TEXTOS AUXILIARES --- */
+.texto-preto { color: #1a1a1a !important; } /* Força texto preto no fundo branco */
+
+/* --- HEADER E MENU ALINHADO --- */
+.barra-topo {
+    display: flex; flex-direction: column;
+    align-items: center; padding: 20px; gap: 15px;
+}
+.logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; text-transform: uppercase; }
+
+.links { display: flex; align-items: center; gap: 20px; list-style: none; }
 .links a { text-decoration: none; color: inherit; font-weight: 700; font-size: 16px; }
 
-/* BOTÃO TOTALMENTE TRANSPARENTE E SEM FUNDO */
-.botao-tema-limpo { 
-    background: transparent !important; /* CORREÇÃO: Remove fundo cinza/branco */
-    border: none; 
-    padding: 0; 
-    cursor: pointer; 
-    display: flex; 
-    align-items: center; 
+/* --- BOTÃO DE TEMA TRANSPARENTE E INTELIGENTE --- */
+#meuBotao {
+    background: transparent; border: none;
+    cursor: pointer; display: flex; align-items: center; padding: 0;
 }
-#iconeBotao { width: 22px; filter: brightness(0) invert(1); transition: 0.3s; } /* Branco no escuro */
-body.dark-mode #iconeBotao { filter: brightness(0); } /* Preto no claro */
+#iconeBotao { 
+    width: 22px; transition: 0.3s; 
+    filter: brightness(0) invert(1); /* Branco no escuro (Início) */
+}
 
-/* --- CONTEÚDO --- */
-.conteudo-principal { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; }
-.foto-perfil-inicio { width: 150px; height: 150px; border-radius: 15px; object-fit: cover; }
-.titulo-monumental-inicio { font-size: 28px; font-weight: 900; }
+/* Ajuste do ícone na Página Branca ou Modo Claro */
+body.pagina-branca #iconeBotao,
+body.dark-mode #iconeBotao { 
+    filter: brightness(0); /* Preto no claro */
+}
+
+/* --- CONTEÚDO CENTRALIZADO --- */
+.conteudo-principal {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; padding: 40px 20px;
+}
+.foto-perfil { width: 150px; height: 150px; border-radius: 15px; object-fit: cover; }
+.titulo-monumental { font-size: 28px; font-weight: 900; }
 .destaque-azul { color: #007bff; }
-.botao-cv-inicio { display: inline-block; padding: 12px 25px; background: #007bff; color: #fff !important; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 20px; }
+.botao-cv {
+    display: inline-block; padding: 12px 25px; background: #007bff;
+    color: #fff !important; text-decoration: none; border-radius: 8px;
+    font-weight: bold; margin-top: 20px;
+}
 
-/* --- TECNOLOGIAS E SOCIAIS (CORES REAIS) --- */
-.cards-tecnologias { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 400px; margin-top: 20px; }
+/* --- TECNOLOGIAS (CORES REAIS) --- */
+.cards-tecnologias { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 20px; }
 .card { background: #1a1a1a; padding: 15px; border-radius: 10px; width: 100px; }
-body.dark-mode .card { background: #fff; border: 1px solid #ddd; }
-.card img { width: 40px; filter: none !important; } /* MANTÉM AS CORES REAIS */
+body.pagina-branca .card, body.dark-mode .card { background: #fff; border: 1px solid #ddd; }
+.card img { width: 40px; filter: none !important; /* CORES REAIS SEMPRE */ }
+.card p { font-size: 12px; margin-top: 5px; color: inherit; }
 
-/* --- RODAPÉ --- */
-.rodape { padding: 30px 20px; margin-top: auto; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-body.dark-mode .rodape { border-top: 1px solid rgba(0, 0, 0, 0.1); }
+/* --- RODAPÉ E ÍCONES ADAPTÁVEIS --- */
+.rodape {
+    padding: 30px 20px; margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+body.pagina-branca .rodape, body.dark-mode .rodape { border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
 .container-redes-rodape { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
 
-.icone-rede { width: 32px; filter: none !important; transition: 0.3s; } /* CORES REAIS SEMPRE */
-.icone-rede:hover { transform: translateY(-5px); }
+.icone-rede { 
+    width: 32px; transition: 0.3s; 
+    filter: brightness(0) invert(1); /* Branco no escuro */
+}
+
+/* Ícones Sociais ficam pretos na Página Branca ou Modo Claro */
+body.pagina-branca .icone-rede,
+body.dark-mode .icone-rede { 
+    filter: brightness(0); /* Preto no claro */
+}
+
+.icone-rede:hover {
+    transform: translateY(-5px);
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px #007bff);
+}
+body.pagina-branca .icone-rede:hover,
+body.dark-mode .icone-rede:hover { 
+    filter: brightness(0) drop-shadow(0 0 8px #007bff); 
+}
 
 .rodape p { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 1px; }
