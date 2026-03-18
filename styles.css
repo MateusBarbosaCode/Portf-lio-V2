@@ -1,70 +1,62 @@
-/* --- CONFIGURAÇÕES BASE --- */
+/* --- CONFIG BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-    background-color: #000; color: #fff;
-    font-family: 'Segoe UI', sans-serif;
-    display: flex; flex-direction: column;
-    min-height: 100vh; text-align: center; transition: 0.3s;
+body { 
+    background-color: #000; color: #fff; 
+    font-family: 'Segoe UI', sans-serif; 
+    display: flex; flex-direction: column; min-height: 100vh;
+    text-align: center; transition: 0.3s;
 }
 body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/* --- HEADER (FIXO E LADO A LADO) --- */
+/* --- HEADER E BOTÃO TEMA --- */
 .barra-topo { padding: 20px; display: flex; flex-direction: column; align-items: center; }
-.logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; text-transform: uppercase; }
+.logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; }
+.links { display: flex; align-items: center; gap: 15px; list-style: none; margin-top: 10px; }
+.links a { text-decoration: none; color: inherit; font-weight: 700; }
 
-.links { 
-    display: flex; align-items: center; justify-content: center; 
-    gap: 15px; list-style: none; margin-top: 10px;
-}
-.links a { text-decoration: none; color: inherit; font-weight: 700; font-size: 16px; }
-
-/* BOTÃO DE TEMA TRANSPARENTE */
 .botao-tema-limpo { background: transparent !important; border: none; cursor: pointer; display: flex; padding: 0; }
 #iconeBotao { width: 22px; filter: brightness(0) invert(1); }
 body.dark-mode #iconeBotao { filter: brightness(0); }
 
-/* --- CONTEÚDO CENTRALIZADO (ESTILO CELULAR NO PC) --- */
-.conteudo-principal {
-    flex: 1; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; padding: 40px 20px;
-}
-.secao-perfil { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+/* --- CONTEÚDO PRINCIPAL --- */
+.conteudo-principal { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; }
 
-/* CORREÇÃO DO TAMANHO DA FOTO */
+/* AJUSTE DA FOTO (150px fixo para Mobile e PC) */
 .foto-perfil { 
-    width: 150px; /* Aumentei para ficar proporcional */
+    width: 150px; 
     height: 150px; 
     border-radius: 15px; 
     object-fit: cover; 
+    margin-bottom: 15px;
 }
 
 .titulo-monumental { font-size: 28px; font-weight: 900; }
 .destaque-azul { color: #007bff; }
 
 /* ESTILO DO BOTÃO DO CURRÍCULO */
-.container-cv { margin-top: 25px; }
+.container-cv { margin-top: 20px; }
 .botao-cv {
     display: inline-block;
     padding: 12px 25px;
-    background: #007bff;
-    color: #fff !important; /* Força cor branca do texto */
+    background-color: #007bff;
+    color: #fff !important;
     text-decoration: none;
-    border-radius: 8px;
     font-weight: bold;
-    font-size: 16px;
+    border-radius: 8px;
     transition: 0.3s;
 }
-.botao-cv:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-}
+.botao-cv:hover { background-color: #0056b3; transform: scale(1.05); }
 
-/* --- TECNOLOGIAS (MODO ESCURO CORES REAIS) --- */
-.card img, .icone-rede { filter: none !important; } /* BLOQUEIA FILTROS DO SISTEMA */
+/* --- ÍCONES SOCIAIS (COR ORIGINAL) --- */
+.icone-rede { 
+    width: 35px; 
+    height: 35px;
+    filter: none !important; 
+    transition: 0.3s;
+}
+.icone-rede:hover { transform: translateY(-5px); }
 
 /* --- RODAPÉ --- */
-.rodape { padding: 30px 20px; margin-top: auto; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-.container-redes-rodape { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
-.icone-rede { width: 32px; transition: 0.3s; }
-.icone-rede:hover { transform: translateY(-5px); }
+.rodape { padding: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+.container-redes { display: flex; justify-content: center; gap: 30px; margin-bottom: 15px; }
