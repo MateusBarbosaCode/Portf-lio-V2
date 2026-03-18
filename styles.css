@@ -45,10 +45,10 @@ body.dark-mode .card { background: #fff; border: 1px solid #ddd; }
     padding: 30px 20px; 
     border-top: 1px solid rgba(255,255,255,0.1); 
     display: flex;
-    flex-direction: column; /* Empilha ícones e texto */
-    align-items: center;    /* Centraliza horizontalmente */
+    flex-direction: column; /* Coloca ícones em cima e texto embaixo */
+    align-items: center;    /* Centraliza os blocos no meio da tela */
     justify-content: center;
-    width: 100%;            /* Garante largura total para centralizar */
+    width: 100%;            
     margin-top: auto;
 }
 
@@ -60,7 +60,7 @@ body.dark-mode .card { background: #fff; border: 1px solid #ddd; }
     width: 100%;
 }
 
-.icone-rede { width: 32px; transition: 0.3s; }
+.icone-rede { width: 32px; transition: 0.3s; display: block; }
 .icone-rede:hover { transform: translateY(-5px); }
 
 .rodape p { 
@@ -69,6 +69,7 @@ body.dark-mode .card { background: #fff; border: 1px solid #ddd; }
     text-align: center; 
     margin: 0; 
     width: 100%;
+    display: block; /* Ocupa a linha toda para garantir a centralização */
 }
 
 body.dark-mode .rodape p { color: #1a1a1a; }
