@@ -1,126 +1,68 @@
-/* --- RESET --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mateus Barbosa | Engenheiro de Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="barra-topo">
+        <div class="logo">Portfólio</div>
+        <nav class="menu-central">
+            <ul class="links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <div class="container-botao">
+                <button id="meuBotao"><img src="img/lua.png" id="iconeBotao" alt="Tema"></button>
+            </div>
+        </nav>
+    </header>
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #000;
-    color: #fff;
-    overflow-x: hidden;
-}
+    <main class="conteudo-principal">
+        <section class="perfil">
+            <div class="foto-container">
+                <img src="img/mateus.jpeg" alt="Mateus Barbosa">
+            </div>
+            
+            <div class="texto">
+                <h1 class="titulo-monumental">Mateus <span class="destaque-azul">Barbosa</span></h1>
+                <p class="subtitulo-autoridade">Engenheiro de Software especializado em criar aplicações com <strong>Java</strong> e <strong>React</strong>.</p>
+                <p class="texto-apoio">Focado em desenvolver sistemas escaláveis e interfaces modernas para a melhor experiência do usuário.</p>
 
-body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
+                <div style="margin-top: 30px;">
+                    <a href="img/Currículo Mateus Barbosa.pdf" download 
+                       style="display: inline-block; padding: 15px 35px; background-color: #007bff; color: #ffffff !important; text-decoration: none; font-weight: 700; border-radius: 8px; font-size: 18px; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);">
+                       Baixar Currículo
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-/* --- HEADER FIXO NO PC --- */
-.barra-topo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10%;
-    height: 90px;
-    background-color: #111;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-}
+    <div class="habilidades">
+        <h3 class="titulo-habilidades">Tecnologias Utilizadas</h3>
+        <div class="cards-tecnologias">
+            <div class="card"><img src="https://skillicons.dev/icons?i=html" alt="HTML5"><p>HTML5</p></div>
+            <div class="card"><img src="https://skillicons.dev/icons?i=css" alt="CSS3"><p>CSS3</p></div>
+            <div class="card"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript"><p>JS</p></div>
+            <div class="card"><img src="https://skillicons.dev/icons?i=java" alt="Java"><p>Java</p></div>
+            <div class="card"><img src="https://skillicons.dev/icons?i=react" alt="React"><p>React</p></div>
+        </div>
+    </div>
 
-body.dark-mode .barra-topo { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    <div class="container-redes-rodape">
+        <a href="https://github.com/MateusBarbosaCode" target="_blank"><img src="img/github (1).png" alt="GitHub"></a>
+        <a href="https://www.instagram.com/mtbarbosa._/" target="_blank"><img src="img/instagram.svg" alt="Instagram"></a>
+        <a href="https://www.linkedin.com/in/mateus-barbosa-0a03b3392/" target="_blank"><img src="img/icons8-linkedin.svg" alt="LinkedIn"></a>
+    </div>
 
-.logo { font-size: 26px; font-weight: 900; text-transform: uppercase; color: #007bff; }
+    <footer class="rodape">
+        <p>&copy; 2026 Mateus Barbosa Santos. Todos os direitos reservados.</p>
+    </footer>
 
-/* Alinhamento do Menu + Botão de Tema */
-.menu-central {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.links {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-}
-
-.links a { text-decoration: none; color: inherit; font-weight: 700; font-size: 18px; transition: 0.3s; }
-.links a:hover { color: #007bff; }
-
-#meuBotao { background: transparent; border: none; cursor: pointer; display: flex; align-items: center; }
-#iconeBotao { width: 22px; filter: invert(1); }
-body.dark-mode #iconeBotao { filter: invert(0); }
-
-/* --- CONTEÚDO PRINCIPAL --- */
-.conteudo-principal {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 120px 5% 40px; /* Padding extra no topo por causa do menu fixo */
-}
-
-/* Layout Lado a Lado no Computador */
-.perfil { 
-    display: flex; 
-    flex-direction: row; 
-    align-items: center; 
-    justify-content: center;
-    gap: 80px; 
-    max-width: 1200px;
-    width: 100%;
-}
-
-.perfil img { 
-    width: 320px; 
-    height: auto;
-    border-radius: 20px; 
-    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2); 
-}
-
-.texto {
-    flex: 1;
-    max-width: 650px;
-}
-
-/* --- TEXTOS --- */
-.titulo-monumental { font-size: 65px; line-height: 1.1; margin-bottom: 20px; font-weight: 900; text-transform: uppercase; color: #fff !important; }
-.destaque-azul { color: #007bff !important; }
-.subtitulo-autoridade { font-size: 24px; line-height: 1.5; margin-bottom: 15px; color: #fff !important; }
-.texto-apoio { font-size: 18px; line-height: 1.7; color: #aaa !important; }
-
-/* Tema Claro */
-body.dark-mode .titulo-monumental { color: #111 !important; }
-body.dark-mode .subtitulo-autoridade { color: #222 !important; }
-body.dark-mode .texto-apoio { color: #555 !important; }
-
-/* --- BOTÃO CV --- */
-.container-cv { margin-top: 30px; }
-.botao-cv {
-    display: inline-block;
-    padding: 15px 35px;
-    background-color: #007bff;
-    color: #fff !important;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 8px;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-/* --- AJUSTE PARA CELULAR (Sobrescreve o PC) --- */
-@media (max-width: 850px) {
-    .barra-topo { flex-direction: column; height: auto; padding: 20px; position: relative; }
-    .menu-central { flex-direction: column; gap: 15px; }
-    .conteudo-principal { padding-top: 20px; }
-    .perfil { flex-direction: column; text-align: center; gap: 30px; }
-    .perfil img { width: 250px; }
-    .titulo-monumental { font-size: 38px; }
-    .subtitulo-autoridade { font-size: 20px; }
-}
-
-/* --- RODAPÉ --- */
-.container-redes-rodape { display: flex; justify-content: center; gap: 30px; padding: 20px 0; }
-.container-redes-rodape img { width: 40px; }
-.rodape { text-align: center; padding: 20px 0 40px; border-top: 1px solid rgba(255,255,255,0.1); }
-.rodape p { font-size: 14px; color: #888; }
+    <script src="script.js"></script>
+</body>
+</html>
