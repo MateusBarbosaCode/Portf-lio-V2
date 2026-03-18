@@ -4,82 +4,91 @@
 body {
     background-color: #000; color: #fff;
     font-family: 'Segoe UI', sans-serif;
-    display: flex; flex-direction: column;
-    min-height: 100vh; transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center; /* Centraliza textos por padrão */
 }
-body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/* --- HEADER --- */
+/* --- HEADER (IGUAL AO CELULAR) --- */
 .barra-topo {
-    display: flex; flex-direction: column; align-items: center;
-    padding: 15px; background-color: #111; gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
 }
-body.dark-mode .barra-topo { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-.logo-link-azul { color: #007bff !important; text-decoration: none; font-weight: 900; font-size: 22px; }
-.links { display: flex; gap: 15px; list-style: none; }
-.links a { text-decoration: none; color: inherit; font-weight: 700; font-size: 14px; }
-#iconeBotao { width: 18px; filter: invert(1); }
-body.dark-mode #iconeBotao { filter: invert(0); }
+.logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; text-transform: uppercase; }
+.links { display: flex; gap: 20px; list-style: none; }
+.links a { text-decoration: none; color: #fff; font-weight: 700; font-size: 16px; }
 
-/* --- CONTEÚDO PRINCIPAL --- */
-.conteudo-principal { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+#iconeBotao { width: 22px; filter: invert(1); background: #fff; border-radius: 4px; padding: 2px; }
 
-/* INÍCIO: FOTO E TEXTO LADO A LADO */
+/* --- CONTEÚDO --- */
+.conteudo-principal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* SEÇÃO PERFIL (FOTO ACIMA DO TEXTO IGUAL CELULAR) */
 .secao-perfil {
-    display: flex; flex-direction: row; align-items: center;
-    justify-content: center; gap: 20px; width: 100%; max-width: 500px;
+    display: flex;
+    flex-direction: column; /* Força a foto ficar em cima no PC também */
+    align-items: center;
+    gap: 20px;
 }
-.foto-perfil { width: 90px !important; height: 90px !important; border-radius: 12px; object-fit: cover; }
-.texto-perfil { text-align: left; flex: 1; }
-.titulo-monumental { font-size: 24px; font-weight: 900; }
+
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.titulo-monumental { font-size: 28px; font-weight: 900; }
 .destaque-azul { color: #007bff; }
-.subtitulo-autoridade { font-size: 14px; margin: 5px 0; }
-.texto-apoio { font-size: 12px; color: #aaa; }
+.subtitulo-autoridade { font-size: 16px; margin: 10px 0; font-weight: normal; }
+.texto-apoio { font-size: 14px; color: #888; }
+
 .botao-cv {
-    display: inline-block; padding: 8px 15px; background: #007bff;
-    color: #fff !important; text-decoration: none; border-radius: 5px;
-    font-size: 12px; font-weight: bold; margin-top: 10px;
+    display: inline-block;
+    padding: 12px 25px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
-/* SOBRE MIM */
-.pagina-centralizada { text-align: center; }
-.titulo-sobre-branco { color: #fff !important; font-size: 32px; font-weight: 900; margin-bottom: 20px; }
-body.dark-mode .titulo-sobre-branco { color: #111 !important; }
-.texto-branco { color: #fff !important; }
-body.dark-mode .texto-branco { color: #333 !important; }
-
-.cards-tecnologias { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 25px auto; max-width: 320px; }
-.card { background: #1a1a1a; padding: 12px; border-radius: 10px; width: 90px; border: 1px solid #333; }
-.card img { width: 35px; }
-.card p { font-size: 10px; margin-top: 5px; color: #fff; }
-body.dark-mode .card { background: #fff; border-color: #ddd; }
-body.dark-mode .card p { color: #333; }
-
-/* --- RODAPÉ (STAY AT BOTTOM) --- */
+/* --- RODAPÉ --- */
 .rodape {
-    padding: 30px 20px; text-align: center;
-    background-color: #000; 
+    padding: 30px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: auto;
 }
-body.dark-mode .rodape { background-color: #f4f4f4; border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
-.container-redes-rodape { display: flex; justify-content: center; gap: 25px; margin-bottom: 20px; }
+.container-redes-rodape {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
 .icone-rede {
-    width: 28px !important; height: 28px !important; object-fit: contain;
-    transition: 0.3s; filter: brightness(0) invert(1);
+    width: 32px;
+    filter: brightness(0) invert(1); /* Deixa branco igual celular */
 }
-.icone-rede:hover { transform: translateY(-5px); filter: brightness(0) invert(1) drop-shadow(0 0 8px #007bff); }
-body.dark-mode .icone-rede { filter: none; }
-body.dark-mode .icone-rede:hover { filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.5)); }
 
-.rodape p { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1.5px; }
-
-/* AJUSTES DESKTOP */
-@media (min-width: 851px) {
-    .barra-topo { flex-direction: row; justify-content: space-between; padding: 0 10%; height: 85px; }
-    .secao-perfil { gap: 50px; max-width: 1000px; padding: 50px 0; }
-    .foto-perfil { width: 220px !important; height: 220px !important; }
-    .titulo-monumental { font-size: 60px; }
-    .cards-tecnologias { max-width: 100%; flex-wrap: nowrap; }
+.rodape p {
+    font-size: 10px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
+
+/* REMOVEMOS O MEDIA QUERY QUE MUDAVA O LAYOUT NO PC */
+/* Agora ele mantém o estilo de coluna em qualquer tamanho de tela */
