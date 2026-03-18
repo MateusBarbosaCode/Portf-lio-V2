@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mim - Mateus Barbosa</title>
+    <title>Sobre Mim | Portfólio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="barra-topo">
-        <div class="logo">Portfólio</div>
+        <div class="logo">
+            <a href="index.html" class="logo-link">PORTFÓLIO</a>
+        </div>
         <nav class="menu-central">
             <ul class="links">
                 <li><a href="index.html">Início</a></li>
@@ -16,49 +18,27 @@
                 <li><a href="contato.html">Contato</a></li>
             </ul>
             <div class="container-botao">
-                <button id="meuBotao"><img src="img/lua.png" id="iconeBotao" alt="Trocar Tema"></button>
+                <button id="meuBotao"><img src="img/lua.png" id="iconeBotao" alt="Tema"></button>
             </div>
         </nav>
     </header>
 
-    <main class="conteudo-principal">
-        <div style="text-align: center; max-width: 850px; padding: 20px;">
-            <h1 class="titulo-monumental" style="font-size: 50px; margin-bottom: 30px;">Sobre Mim</h1>
-            
-            <p class="subtitulo-autoridade" style="margin-bottom: 25px;">
-                Olá! Meu nome é <strong>Mateus Barbosa Santos</strong>. Sou um entusiasta de tecnologia e atualmente graduando em <strong>Engenharia de Software</strong> pela Unopar/Anhanguera.
-            </p>
-
-            <p class="texto-apoio" style="margin: 0 auto 40px auto;">
-                Meu foco principal está no desenvolvimento de aplicações modernas, utilizando <strong>Java</strong> no back-end e <strong>React</strong> no front-end. Resido em Arapiraca, Alagoas, e busco constantemente aprimorar minhas habilidades em arquitetura de sistemas e hardware.
-            </p>
-        </div>
-    </main>
-
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; margin-bottom: 30px; width: 100%;">
+    <main class="conteudo-principal centralizado">
+        <h1 class="titulo-pagina">SOBRE MIM</h1>
+        <p class="texto-sobre">Olá! Meu nome é <strong>Mateus Barbosa Santos</strong>. Sou um entusiasta de tecnologia e atualmente graduando em <strong>Engenharia de Software</strong>.</p>
+        <p class="texto-sobre">Meu foco principal é o desenvolvimento de aplicações modernas com Java e React.</p>
         
-        <div class="container-redes-rodape" style="padding: 0; margin: 0;">
-            <a href="https://github.com/MateusBarbosaCode" target="_blank"><img src="img/github (1).png" alt="GitHub"></a>
-            <a href="https://www.instagram.com/mtbarbosa._/" target="_blank"><img src="img/instagram.svg" alt="Instagram"></a>
-            <a href="https://www.linkedin.com/in/mateus-barbosa-0a03b3392/" target="_blank"><img src="img/icons8-linkedin.svg" alt="LinkedIn"></a>
-        </div>
-
-        <div class="habilidades" style="width: 100%; text-align: center;">
-            <h3 class="subtitulo-autoridade" style="font-size: 14px; text-transform: uppercase; margin-bottom: 20px; text-align: center; width: 100%; letter-spacing: 1px;">Tecnologias Utilizadas</h3>
-            
+        <div class="habilidades">
+            <h3 class="titulo-habilidades">TECNOLOGIAS UTILIZADAS</h3>
             <div class="cards-tecnologias">
                 <div class="card"><img src="https://skillicons.dev/icons?i=html" alt="HTML5"><p>HTML5</p></div>
                 <div class="card"><img src="https://skillicons.dev/icons?i=css" alt="CSS3"><p>CSS3</p></div>
-                <div class="card"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript"><p>JS</p></div>
+                <div class="card"><img src="https://skillicons.dev/icons?i=js" alt="JS"><p>JS</p></div>
                 <div class="card"><img src="https://skillicons.dev/icons?i=java" alt="Java"><p>Java</p></div>
                 <div class="card"><img src="https://skillicons.dev/icons?i=react" alt="React"><p>React</p></div>
             </div>
         </div>
-    </div>
-
-    <footer class="rodape">
-        <p>&copy; 2026 Mateus Barbosa Santos. Todos os direitos reservados.</p>
-    </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
