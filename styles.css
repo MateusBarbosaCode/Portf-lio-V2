@@ -1,4 +1,4 @@
-/* --- RESET E BASE --- */
+/* --- RESET E BASE (INTOCADO) --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -9,7 +9,7 @@ body {
     background-color: #000;
     color: #fff;
     overflow-x: hidden;
-    transition: background-color 0.3s, color 0.3s;
+    transition: 0.3s;
 }
 
 body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
@@ -37,7 +37,7 @@ body.dark-mode .barra-topo { background-color: #fff; box-shadow: 0 2px 10px rgba
 #iconeBotao { width: 22px; filter: invert(1); }
 body.dark-mode #iconeBotao { filter: invert(0); }
 
-/* --- CONTEÚDO PRINCIPAL --- */
+/* --- CONTEÚDO PRINCIPAL (BASE CELULAR) --- */
 .conteudo-principal {
     flex: 1;
     display: flex;
@@ -46,7 +46,7 @@ body.dark-mode #iconeBotao { filter: invert(0); }
     padding: 40px 20px;
 }
 
-.wrapper-inicio {
+.wrapper-inicio, .secao-sobre {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,34 +55,62 @@ body.dark-mode #iconeBotao { filter: invert(0); }
     gap: 30px;
 }
 
-/* --- AJUSTE DA FOTO (CELULAR) --- */
+/* --- FIX DE TAMANHO DA FOTO NO INÍCIO (APENAS CELULAR) --- */
 .foto-container img {
-    width: 180px; /* Reduzido para o celular */
+    width: 120px !important; /* Diminuído para 120px no celular */
     height: auto;
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
 }
 
+/* Textos e Títulos */
 .titulo-monumental { font-size: 38px; font-weight: 900; color: #fff; text-transform: uppercase; }
 .destaque-azul { color: #007bff !important; }
 .subtitulo-autoridade { font-size: 20px; color: #fff; margin: 15px 0; }
 .texto-apoio { font-size: 16px; color: #aaa; max-width: 600px; }
 
+body.dark-mode .texto-modo-escuro, 
 body.dark-mode .titulo-monumental,
-body.dark-mode .subtitulo-autoridade { color: #111; }
+body.dark-mode .subtitulo-autoridade { color: #111 !important; }
 body.dark-mode .texto-apoio { color: #555; }
 
 .container-cv { margin-top: 25px; display: flex; justify-content: center; }
 .botao-cv { display: inline-block; padding: 12px 30px; background-color: #007bff; color: #fff !important; text-decoration: none; font-weight: 700; border-radius: 8px; transition: 0.3s; }
 
-/* --- RODAPÉ --- */
+/* --- HABILIDADES (BASE CELULAR) --- */
+.habilidades { padding: 40px 0; width: 100%; text-align: center; }
+.titulo-habilidades { font-size: 14px; text-transform: uppercase; margin-bottom: 25px; color: #fff; letter-spacing: 2px; }
+body.dark-mode .titulo-habilidades { color: #1a1a1a; }
+
+/* Lista de Habilidades na vertical no mobile */
+.cards-tecnologias {
+    display: flex;
+    flex-direction: column; /* Vertical no mobile */
+    align-items: center;
+    gap: 15px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 10px;
+    width: 90px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.card p { font-size: 11px; font-weight: bold; color: #fff; margin-top: 8px; }
+body.dark-mode .card { background: #fff; border-color: #ddd; }
+body.dark-mode .card p { color: #333; }
+
+/* Rodapé */
 .container-redes-rodape { display: flex; justify-content: center; gap: 30px; padding: 20px; }
 .container-redes-rodape img { width: 30px; }
 .rodape { text-align: center; padding: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: #888; }
 
+
 /* ========================================================= */
-/* --- AJUSTES EXCLUSIVOS PC --- */
+/* --- AJUSTES EXCLUSIVOS PC (NÃO MEXEM NO MOBILE) --- */
 /* ========================================================= */
 @media (min-width: 851px) {
     .barra-topo { flex-direction: row; justify-content: space-between; padding: 0 10%; height: 90px; position: fixed; top: 0; }
@@ -97,21 +125,28 @@ body.dark-mode .texto-apoio { color: #555; }
         margin: 0 auto;
     }
 
-    /* --- AJUSTE DA FOTO (PC) --- */
+    /* --- FIX DE TAMANHO DA FOTO NO INÍCIO (PC MANTÉM TAMANHO) --- */
     .foto-container img {
-        width: 250px; /* Reduzido para o PC */
+        width: 220px !important; /* Tamanho mantido no PC */
     }
 
     .titulo-monumental { font-size: 65px; }
     .subtitulo-autoridade { font-size: 24px; }
     .container-cv { justify-content: flex-start; }
 
-    /* Estilos das páginas Sobre e Contato no PC */
+    /* Estilos das páginas Sobre/Contato no PC */
     .pagina-centralizada { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 80vh; }
     .pagina-centralizada .texto-branco { color: #ffffff !important; margin: 0 auto; }
-    body.dark-mode .pagina-centralizada .texto-branco { color: #ffffff !important; }
+    body.dark-mode .pagina-centralizada .texto-branco { color: #1a1a1a !important; }
     
     /* Trava de ícones de contato */
     .redes-sociais-contato { display: flex; justify-content: center; gap: 30px; margin-top: 25px; }
     .icone-rede { width: 45px !important; height: 45px !important; object-fit: contain; }
+
+    /* --- FIX DE HABILIDADES (HORIZONTAL NO PC) --- */
+    .cards-tecnologias {
+        flex-direction: row; /* Força a horizontal no PC */
+        flex-wrap: nowrap; /* Impede que quebre a linha no PC */
+        gap: 25px;
+    }
 }
