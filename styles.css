@@ -1,68 +1,71 @@
-/* RESET */
+/* --- BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
     display: flex; flex-direction: column; min-height: 100vh;
-    font-family: 'Segoe UI', sans-serif; background-color: #000; color: #fff;
-    transition: 0.3s;
+    font-family: 'Segoe UI', sans-serif; background-color: #000; color: #fff; transition: 0.3s;
 }
-
 body.light-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/* HEADER */
+/* --- HEADER E LOGO AZUL --- */
 .barra-topo {
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 10%; height: 90px; background-color: #111;
 }
 body.light-mode .barra-topo { background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
 
-.logo-link {
-    color: #007bff !important; text-decoration: none;
-    font-weight: 900; font-size: 26px;
+.logo-link-azul {
+    color: #007bff !important; /* Cor azul fixa */
+    text-decoration: none; font-weight: 900; font-size: 26px; text-transform: uppercase;
 }
 
 .links { display: flex; gap: 25px; list-style: none; }
 .links a { text-decoration: none; color: inherit; font-weight: 700; }
-
 #meuBotao { background: transparent; border: none; cursor: pointer; }
 #iconeBotao { width: 22px; filter: invert(1); }
 body.light-mode #iconeBotao { filter: invert(0); }
 
-/* CONTEÚDO PRINCIPAL */
+/* --- CONTEÚDO --- */
 .conteudo-principal { flex: 1; display: flex; align-items: center; justify-content: center; padding: 50px 10%; }
 
-/* INÍCIO LADO A LADO (PC) */
-.wrapper-inicio .perfil { display: flex; align-items: center; gap: 60px; }
-.foto-container img { width: 280px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,123,255,0.2); }
+/* --- LAYOUT INÍCIO (LADO A LADO NO PC) --- */
+.wrapper-inicio .perfil { display: flex; align-items: center; gap: 60px; text-align: left; }
+.foto-container img { width: 300px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,123,255,0.2); }
 
-/* CENTRALIZAÇÃO (SOBRE E CONTATO) */
-.centralizado { flex-direction: column; text-align: center; }
-.titulo-pagina { font-size: 45px; margin-bottom: 30px; }
-.texto-sobre { max-width: 800px; font-size: 18px; margin-bottom: 20px; line-height: 1.6; }
+/* --- LAYOUT SOBRE/CONTATO (CENTRALIZADO TOTAL NO PC) --- */
+.pagina-centralizada { flex-direction: column; text-align: center; }
+.pagina-centralizada .texto-apoio { margin: 15px auto; }
 
-/* HABILIDADES HORIZONTAL (PC) */
-.habilidades { margin-top: 40px; width: 100%; }
-.cards-tecnologias { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
-.card { background: #1a1a1a; padding: 15px; border-radius: 12px; width: 100px; text-align: center; border: 1px solid #333; }
-body.light-mode .card { background: #fff; border-color: #ddd; }
-.card img { width: 40px; }
-.card p { font-size: 12px; margin-top: 8px; font-weight: bold; }
-
-/* TEXTOS E DESTAQUES */
-.titulo-monumental { font-size: 60px; font-weight: 900; }
+/* --- TEXTOS --- */
+.titulo-monumental { font-size: 60px; font-weight: 900; text-transform: uppercase; }
 .destaque-azul { color: #007bff; }
-.botao-cv { background: #007bff; color: #fff; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+.subtitulo { font-size: 24px; margin: 15px 0; }
+.texto-apoio { font-size: 18px; color: #aaa; max-width: 750px; line-height: 1.6; }
+body.light-mode .texto-apoio { color: #555; }
 
-/* RESPONSIVIDADE CELULAR */
-@media (max-width: 850px) {
-    .barra-topo { padding: 0 5%; flex-direction: column; height: auto; padding: 20px 0; gap: 15px; }
-    .wrapper-inicio .perfil { flex-direction: column; text-align: center; }
-    .titulo-monumental { font-size: 40px; }
-    .cards-tecnologias { flex-wrap: wrap; }
-    .conteudo-principal { padding-top: 20px; }
+/* --- TECNOLOGIAS EM LINHA NO PC --- */
+.habilidades { margin-top: 30px; width: 100%; }
+.titulo-habilidades { font-size: 14px; color: #007bff; letter-spacing: 2px; margin-bottom: 20px; }
+.cards-tecnologias { display: flex; justify-content: center; gap: 20px; flex-wrap: nowrap; }
+.card { background: #111; padding: 15px; border-radius: 12px; width: 100px; border: 1px solid #333; }
+body.light-mode .card { background: #fff; border-color: #ddd; }
+.card p { font-size: 11px; margin-top: 8px; font-weight: bold; }
+
+/* --- BOTÃO --- */
+.botao-cv {
+    display: inline-block; background: #007bff; color: #fff; 
+    padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px;
 }
 
-/* RODAPÉ */
-.redes-sociais-fixas { display: flex; justify-content: center; gap: 25px; padding: 20px; }
-.redes-sociais-fixas img { width: 35px; }
-.rodape { text-align: center; padding: 20px; font-size: 12px; color: #888; }
+/* --- RESPONSIVIDADE CELULAR (NÃO MEXE NO QUE ESTÁ BOM) --- */
+@media (max-width: 850px) {
+    .barra-topo { padding: 20px; flex-direction: column; height: auto; gap: 15px; }
+    .wrapper-inicio .perfil { flex-direction: column; text-align: center; gap: 30px; }
+    .titulo-monumental { font-size: 35px; }
+    .foto-container img { width: 220px; }
+    .cards-tecnologias { flex-wrap: wrap; }
+}
+
+/* --- RODAPÉ --- */
+.redes-sociais-rodape { display: flex; justify-content: center; gap: 20px; margin-bottom: 15px; }
+.redes-sociais-rodape img { width: 30px; }
+.rodape { padding: 30px; text-align: center; font-size: 13px; color: #777; border-top: 1px solid #222; }
