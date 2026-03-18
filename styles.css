@@ -15,7 +15,7 @@ body {
 /* Tema Claro */
 body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/* --- BARRA TOPO --- */
+/* BARRA TOPO */
 .barra-topo {
     display: flex;
     flex-direction: column;
@@ -44,7 +44,7 @@ body.dark-mode .barra-topo { background-color: #fff; box-shadow: 0 2px 10px rgba
 #iconeBotao { width: 22px; filter: invert(1); }
 body.dark-mode #iconeBotao { filter: invert(0); }
 
-/* --- CONTEÚDO PRINCIPAL --- */
+/* CONTEÚDO PRINCIPAL  */
 .conteudo-principal {
     flex: 1;
     display: flex;
@@ -74,7 +74,7 @@ body.dark-mode .texto-apoio { color: #555; }
     .subtitulo-autoridade { font-size: 20px; }
 }
 
-/* --- BOTÕES --- */
+/*  BOTÕES  */
 .botao-cv {
     display: inline-block;
     margin-top: 20px;
@@ -89,7 +89,7 @@ body.dark-mode .texto-apoio { color: #555; }
 .botao-cv:hover { transform: scale(1.05); background-color: #0056b3; }
 body.dark-mode .botao-cv { background-color: #007bff; color: #fff; }
 
-/* --- CARDS DE TECNOLOGIA --- */
+/*  CARDS DE TECNOLOGIA  */
 .habilidades { margin: 30px 0; }
 .cards-tecnologias { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
 @media (min-width: 851px) { .cards-tecnologias { justify-content: flex-start; } }
@@ -110,7 +110,7 @@ body.dark-mode .botao-cv { background-color: #007bff; color: #fff; }
 body.dark-mode .card { background: #fff; border-color: #ddd; }
 body.dark-mode .card p { color: #333; }
 
-/* --- REDES SOCIAIS E RODAPÉ --- */
+/* REDES SOCIAIS E RODAPÉ */
 .container-redes-rodape {
     display: flex;
     justify-content: center;
