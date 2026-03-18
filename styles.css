@@ -1,4 +1,4 @@
-/* --- CONFIG BASE --- */
+/* CONFIG BASE  */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
@@ -10,7 +10,7 @@ body {
 
 body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/* --- HEADER --- */
+/* HEADER */
 .barra-topo { padding: 20px; display: flex; flex-direction: column; align-items: center; }
 .logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; }
 .links { display: flex; align-items: center; gap: 15px; list-style: none; margin-top: 10px; }
@@ -20,7 +20,7 @@ body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 #iconeBotao { width: 22px; filter: brightness(0) invert(1); }
 body.dark-mode #iconeBotao { filter: brightness(0); }
 
-/* --- CONTEÚDO PRINCIPAL --- */
+/*  CONTEÚDO PRINCIPAL  */
 .conteudo-principal { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; }
 .secao-perfil { display: flex; flex-direction: row; align-items: center; gap: 40px; text-align: left; max-width: 900px; }
 .foto-perfil { width: 180px; height: 180px; border-radius: 15px; object-fit: cover; }
@@ -34,13 +34,13 @@ body.dark-mode .titulo-branco-puro { color: #1a1a1a !important; }
 .botao-cv { display: inline-block; padding: 12px 30px; background-color: #007bff; color: #fff !important; text-decoration: none; font-weight: bold; border-radius: 8px; transition: 0.3s; }
 .botao-cv:hover { background-color: #0056b3; }
 
-/* --- CARDS TECNOLOGIAS --- */
+/*  CARDS TECNOLOGIAS  */
 .cards-tecnologias { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 20px; width: 100%; }
 .card { background: #1a1a1a; padding: 15px; border-radius: 12px; width: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 body.dark-mode .card { background: #fff; border: 1px solid #ddd; }
 .card img, .icone-rede { filter: none !important; } 
 
-/* --- RODAPÉ CONSERTADO (CENTRALIZAÇÃO TOTAL) --- */
+/*  RODAPÉ CONSERTADO (CENTRALIZAÇÃO TOTAL) */
 .rodape { 
     padding: 30px 20px; 
     border-top: 1px solid rgba(255,255,255,0.1); 
@@ -74,14 +74,14 @@ body.dark-mode .card { background: #fff; border: 1px solid #ddd; }
 
 body.dark-mode .rodape p { color: #1a1a1a; }
 
-/* --- RESPONSIVIDADE --- */
+/*  RESPONSIVIDADE  */
 @media (max-width: 768px) {
     .secao-perfil { flex-direction: column; text-align: center; }
     .titulo-monumental { font-size: 28px; }
     .card { width: 45%; max-width: 160px; }
 }
 
-/* --- ESTILOS SOBRE E CONTATO --- */
+/*  ESTILOS SOBRE E CONTATO */
 .sobre-mim-wrapper, .contato-wrapper { display: flex; flex-direction: column; align-items: center; width: 100%; }
 .titulo-monumental-sobre, .titulo-monumental-contato { font-size: 36px; font-weight: 800; text-transform: uppercase; color: #fff; margin-bottom: 20px; text-align: center; }
 .texto-apresentacao { font-size: 18px; line-height: 1.6; color: #ccc; margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; }
