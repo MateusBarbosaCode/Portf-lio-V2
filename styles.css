@@ -1,220 +1,69 @@
-/* --- CONFIGURAÇÕES GERAIS --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* --- CONFIG BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+body { 
+    background-color: #000; color: #fff; 
+    font-family: 'Segoe UI', sans-serif; 
+    display: flex; flex-direction: column; min-height: 100vh;
     transition: 0.3s;
 }
+body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/* MODO CLARO (Ativado pelo JS) */
-body.dark-mode {
-    background-color: #f4f4f4;
-    color: #1a1a1a;
-}
+/* --- HEADER (FIXO LADO A LADO) --- */
+.barra-topo { padding: 20px; display: flex; flex-direction: column; align-items: center; }
+.logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; text-transform: uppercase; }
 
-/* --- HEADER E MENU --- */
-.barra-topo {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+.links { display: flex; align-items: center; justify-content: center; gap: 15px; list-style: none; margin-top: 10px; }
+.links a { text-decoration: none; color: inherit; font-weight: 700; font-size: 16px; }
 
-.logo-link-azul {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 24px;
-    text-transform: uppercase;
-}
+/* BOTÃO DE TEMA TRANSPARENTE */
+.botao-tema-limpo { background: transparent !important; border: none; cursor: pointer; display: flex; padding: 0; }
+#iconeBotao { width: 22px; filter: brightness(0) invert(1); }
+body.dark-mode #iconeBotao { filter: brightness(0); }
 
-.links {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    list-style: none;
-    margin-top: 10px;
-}
-
-.links a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: 700;
-    font-size: 16px;
-}
-
-/* BOTÃO DE TEMA (LUA) SEM FUNDO */
-.botao-tema-limpo {
-    background: transparent !important;
-    border: none !important;
-    cursor: pointer;
-    display: flex;
-    padding: 0;
-    outline: none;
-}
-
-#iconeBotao {
-    width: 22px;
-    filter: brightness(0) invert(1); /* Fica branco no fundo preto */
-    transition: 0.3s;
-}
-
-body.dark-mode #iconeBotao {
-    filter: brightness(0); /* Fica preto no fundo claro */
-}
-
-/* --- CONTEÚDO PRINCIPAL --- */
+/* --- CONTEÚDO PRINCIPAL (PC LADO A LADO) --- */
 .conteudo-principal {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
+    flex: 1; display: flex;
+    align-items: center; justify-content: center; padding: 40px 20px;
 }
 
+/* Trava para ficar sempre lado a lado no PC */
 .secao-perfil {
-    display: flex;
-    flex-direction: row; /* Lado a lado no PC */
-    align-items: center;
-    gap: 50px;
-    text-align: left;
-    max-width: 1000px;
+    display: flex; flex-direction: row; align-items: center;
+    gap: 40px; text-align: left; max-width: 900px;
 }
 
-.foto-perfil {
-    width: 180px; /* Tamanho ajustado conforme pedido */
-    height: 180px;
-    border-radius: 15px;
-    object-fit: cover;
+.foto-perfil { 
+    width: 180px; height: 180px; 
+    border-radius: 15px; object-fit: cover; 
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-.titulo-monumental {
-    font-size: 42px;
-    font-weight: 900;
-    line-height: 1.1;
-}
+.titulo-monumental { font-size: 38px; font-weight: 900; }
+.destaque-azul { color: #007bff; }
 
-.destaque-azul {
-    color: #007bff; /* Usado apenas no Início para o nome Barbosa */
-}
-
-.subtitulo-autoridade {
-    font-size: 18px;
-    margin-top: 10px;
-    color: #ccc;
-}
-
-body.dark-mode .subtitulo-autoridade {
-    color: #555;
-}
-
-/* --- BOTÃO DO CURRÍCULO (IGUAL À FOTO) --- */
-.container-cv {
-    margin-top: 30px;
-}
-
+/* BOTÃO DO CURRÍCULO */
+.container-cv { margin-top: 25px; }
 .botao-cv {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #007bff;
-    color: #ffffff !important; /* Sempre texto branco */
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: 0.3s ease;
+    display: inline-block; padding: 12px 30px;
+    background-color: #007bff; color: #fff !important; /* Sempre texto branco */
+    text-decoration: none; font-weight: bold; border-radius: 8px;
 }
+.botao-cv:hover { background-color: #0056b3; }
 
-.botao-cv:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
+/* --- TECNOLOGIAS E SOCIAIS (COR ORIGINAL TRAVADA) --- */
+/* Isso impede que o modo claro force os ícones a ficarem pretos/brancos */
+.card img, .icone-rede { filter: none !important; }
 
-/* --- TECNOLOGIAS (SOBRE MIM) --- */
-.cards-tecnologias {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-}
+/* --- RODAPÉ --- */
+.rodape { padding: 30px 20px; margin-top: auto; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
+.container-redes-rodape { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
+.icone-rede { width: 32px; transition: 0.3s; }
+.icone-rede:hover { transform: translateY(-5px); }
 
-.card {
-    background: #1a1a1a;
-    padding: 15px;
-    border-radius: 10px;
-    width: 100px;
-    text-align: center;
-}
-
-body.dark-mode .card {
-    background: #fff;
-    border: 1px solid #ddd;
-}
-
-.card img {
-    width: 40px;
-    filter: none !important; /* Mantém cores reais dos ícones de tech */
-}
-
-/* --- RODAPÉ E REDES SOCIAIS --- */
-.rodape {
-    padding: 40px 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-}
-
-body.dark-mode .rodape {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.container-redes {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 20px;
-}
-
-.icone-rede {
-    width: 32px;
-    height: 32px;
-    filter: none !important; /* TRAVA AS CORES ORIGINAIS DO LINKEDIN/INSTAGRAM */
-    transition: 0.3s;
-}
-
-.icone-rede:hover {
-    transform: translateY(-5px);
-}
-
-.rodape p {
-    font-size: 12px;
-    color: #777;
-    text-transform: uppercase;
-}
-
-/* --- RESPONSIVIDADE (MOBILE) --- */
+/* MOBILE RESPONSIVO (SÓ SE A TELA FOR MUITO PEQUENA) */
 @media (max-width: 768px) {
-    .secao-perfil {
-        flex-direction: column; /* Empilha foto em cima do texto */
-        text-align: center;
-        gap: 20px;
-    }
-
-    .titulo-monumental {
-        font-size: 32px;
-    }
-
-    .foto-perfil {
-        width: 150px;
-        height: 150px;
-    }
+    .secao-perfil { flex-direction: column; text-align: center; gap: 20px; }
+    .titulo-monumental { font-size: 28px; }
+    .foto-perfil { width: 150px; height: 150px; }
 }
