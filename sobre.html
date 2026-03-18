@@ -8,12 +8,13 @@
 </head>
 <body>
     <header class="barra-topo">
-        <div class="logo"><a href="index.html" class="logo-link-azul">PORTFÓLIO</a></div>
+        <div class="logo">
+            <a href="index.html" class="logo-link-azul">PORTFÓLIO</a>
+        </div>
         <nav class="menu-central">
             <ul class="links">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="sobre.html" class="ativo">Sobre</a></li> <li><a href="contato.html">Contato</a></li>
                 <li class="item-botao">
                     <button id="meuBotao" class="botao-tema-limpo">
                         <img src="img/lua.png" id="iconeBotao" alt="Tema">
@@ -24,24 +25,72 @@
     </header>
 
     <main class="conteudo-principal">
-        <h1 class="titulo-branco-puro">SOBRE MIM</h1>
-        <div class="cards-tecnologias">
-            <div class="card"><img src="https://skillicons.dev/icons?i=html" alt="HTML5"><p>HTML5</p></div>
-            <div class="card"><img src="https://skillicons.dev/icons?i=css" alt="CSS3"><p>CSS3</p></div>
-            <div class="card"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript"><p>JS</p></div>
-            <div class="card"><img src="https://skillicons.dev/icons?i=java" alt="Java"><p>Java</p></div>
-            <div class="card"><img src="https://skillicons.dev/icons?i=react" alt="React"><p>React</p></div>
-        </div>
+        <section class="secao-sobre">
+            <div class="sobre-mim-container">
+                <h1 class="titulo-monumental-sobre">SOBRE MIM</h1>
+                <p class="texto-apresentacao">
+                    Olá! Meu nome é <strong>Mateus Barbosa Santos</strong>. Sou um entusiasta de tecnologia e atualmente graduando em <strong>Engenharia de Software</strong>.
+                </p>
+            </div>
+
+            <div class="tecnologias-container">
+                <h2 class="subtitulo-tecnologias">TECNOLOGIAS UTILIZADAS</h2>
+                
+                <div class="cards-tecnologias">
+                    <div class="card">
+                        <div class="icon-wrapper">
+                            <img src="https://skillicons.dev/icons?i=html" alt="HTML5">
+                        </div>
+                        <p>HTML5</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon-wrapper">
+                            <img src="https://skillicons.dev/icons?i=css" alt="CSS3">
+                        </div>
+                        <p>CSS3</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon-wrapper">
+                            <img src="https://skillicons.dev/icons?i=js" alt="JavaScript">
+                        </div>
+                        <p>JS</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon-wrapper">
+                            <img src="https://skillicons.dev/icons?i=java" alt="Java">
+                        </div>
+                        <p>Java</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon-wrapper">
+                            <img src="https://skillicons.dev/icons?i=react" alt="React">
+                        </div>
+                        <p>React</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="rodape">
         <div class="container-redes">
-            <a href="https://github.com/MateusBarbosaCode" target="_blank"><img src="img/github (1).png" class="icone-rede"></a>
-            <a href="https://www.instagram.com/mtbarbosa._/" target="_blank"><img src="img/instagram.svg" class="icone-rede"></a>
-            <a href="https://www.linkedin.com/in/mateus-barbosa-0a03b3392/" target="_blank"><img src="img/icons8-linkedin.svg" class="icone-rede"></a>
+            <a href="https://github.com/MateusBarbosaCode" target="_blank">
+                <img src="img/github (1).png" alt="GitHub" class="icone-rede">
+            </a>
+            <a href="https://www.instagram.com/mtbarbosa._/" target="_blank">
+                <img src="img/instagram.svg" alt="Instagram" class="icone-rede">
+            </a>
+            <a href="https://www.linkedin.com/in/mateus-barbosa-0a03b3392/" target="_blank">
+                <img src="img/icons8-linkedin.svg" alt="LinkedIn" class="icone-rede">
+            </a>
         </div>
-        <p>&copy; 2026 Mateus Barbosa Santos</p>
+        <p>&copy; 2026 Mateus Barbosa Santos. Todos os direitos reservados.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
