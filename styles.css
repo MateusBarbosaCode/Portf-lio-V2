@@ -37,3 +37,116 @@ body.dark-mode .card { background: #fff; border: 1px solid #ddd; }
     .secao-perfil { flex-direction: column; text-align: center; }
     .titulo-monumental { font-size: 28px; }
 }
+
+/* ============================================================
+   ESTILOS EXCLUSIVOS PARA A PÁGINA SOBRE MIM
+   ============================================================ */
+
+/* 1. Alinhamento Global do Conteúdo (PC e Celular) */
+.conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente na tela */
+    text-align: center; /* Centraliza todo o texto */
+    padding: 60px 20px;
+    width: 100%;
+}
+
+/* Container que limita a largura para PC */
+.sobre-mim-wrapper {
+    max-width: 800px; /* Limita a largura no PC para não esticar muito */
+    width: 100%;
+    margin: 0 auto; /* Centraliza o wrapper dentro do main */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título e Subtítulo Centralizados */
+.titulo-monumental-sobre,
+.subtitulo-tecnologias {
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff; /* Título branco */
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Parágrafo de Apresentação Centralizado */
+.texto-apresentacao {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ccc; /* Texto cinza claro conforme imagem */
+    margin-bottom: 40px;
+    max-width: 650px; /* Melhora a leitura no PC */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 2. Grade de Cards Centralizada (PC e Celular) */
+.cards-tecnologias {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha no mobile */
+    justify-content: center; /* Centraliza os cards */
+    gap: 15px; /* Menos espaço entre cards no mobile */
+    margin-top: 30px;
+    width: 100%;
+}
+
+/* Estilo do Card Centralizado */
+.cards-tecnologias .card {
+    background-color: #1a1a1a; /* Fundo cinza escuro dos cards */
+    border: 1px solid #333;
+    border-radius: 12px;
+    width: 140px; /* Largura fixa */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    transition: 0.3s ease;
+}
+
+/* Ícone dentro do Card Centralizado */
+.cards-tecnologias .card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    object-fit: contain;
+    filter: none !important; /* Mantém as cores originais */
+}
+
+/* Texto dentro do Card Centralizado */
+.cards-tecnologias .card p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* ============================================================
+   RESPONSIVIDADE (Ajustes para Celular)
+   ============================================================ */
+@media (max-width: 768px) {
+    .conteudo-principal {
+        padding: 40px 15px;
+    }
+
+    .titulo-monumental-sobre,
+    .subtitulo-tecnologias {
+        font-size: 28px; /* Títulos menores no mobile */
+    }
+
+    .texto-apresentacao {
+        font-size: 16px; /* Texto menor no mobile */
+    }
+
+    .cards-tecnologias .card {
+        width: 45%; /* Mostra 2 cards por linha no mobile */
+        max-width: 160px;
+    }
+}
