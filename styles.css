@@ -1,4 +1,4 @@
-/* --- BASE --- */
+/* --- BASE E TEMA --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -7,11 +7,12 @@ body {
     display: flex; flex-direction: column;
     min-height: 100vh; text-align: center; transition: 0.3s;
 }
+/* No Modo Escuro (padrão), os títulos já são brancos pelo body */
 body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/* --- HEADER (FIXO LADO A LADO) --- */
+/* --- HEADER E ALINHAMENTO DO BOTÃO --- */
 .barra-topo { padding: 20px; display: flex; flex-direction: column; align-items: center; }
-.logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; text-transform: uppercase; }
+.logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; }
 
 .links { 
     display: flex; align-items: center; justify-content: center; 
@@ -19,41 +20,37 @@ body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 }
 .links a { text-decoration: none; color: inherit; font-weight: 700; font-size: 16px; }
 
-/* BOTÃO DE TEMA SEM FUNDO */
-.botao-tema-limpo { background: transparent !important; border: none; cursor: pointer; display: flex; padding: 0; }
-#iconeBotao { width: 22px; transition: 0.3s; filter: brightness(0) invert(1); }
-body.dark-mode #iconeBotao { filter: brightness(0); }
-
-/* --- CONTEÚDO (IGUAL CELULAR NO PC) --- */
-.conteudo-principal {
-    flex: 1; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; padding: 40px 20px;
+/* BOTÃO TOTALMENTE TRANSPARENTE E SEM FUNDO */
+.botao-tema-limpo { 
+    background: transparent !important; /* CORREÇÃO: Remove fundo cinza/branco */
+    border: none; 
+    padding: 0; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
 }
-.secao-perfil { display: flex; flex-direction: column; align-items: center; gap: 20px; }
-.foto-perfil { width: 150px; height: 150px; border-radius: 15px; object-fit: cover; }
-.titulo-monumental { font-size: 28px; font-weight: 900; }
+#iconeBotao { width: 22px; filter: brightness(0) invert(1); transition: 0.3s; } /* Branco no escuro */
+body.dark-mode #iconeBotao { filter: brightness(0); } /* Preto no claro */
+
+/* --- CONTEÚDO --- */
+.conteudo-principal { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; }
+.foto-perfil-inicio { width: 150px; height: 150px; border-radius: 15px; object-fit: cover; }
+.titulo-monumental-inicio { font-size: 28px; font-weight: 900; }
 .destaque-azul { color: #007bff; }
+.botao-cv-inicio { display: inline-block; padding: 12px 25px; background: #007bff; color: #fff !important; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 20px; }
 
-.botao-cv {
-    display: inline-block; padding: 12px 25px; background: #007bff;
-    color: #fff !important; text-decoration: none; border-radius: 8px;
-    font-weight: bold; margin-top: 20px;
-}
-
-/* --- TECNOLOGIAS (ESTILO 3 EM CIMA, 2 EMBAIXO) --- */
-.cards-tecnologias {
-    display: flex; flex-wrap: wrap; justify-content: center;
-    gap: 15px; max-width: 380px; margin: 20px auto;
-}
+/* --- TECNOLOGIAS E SOCIAIS (CORES REAIS) --- */
+.cards-tecnologias { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 400px; margin-top: 20px; }
 .card { background: #1a1a1a; padding: 15px; border-radius: 10px; width: 100px; }
 body.dark-mode .card { background: #fff; border: 1px solid #ddd; }
-
-/* CORES REAIS SEM FILTRO */
-.card img, .icone-rede { filter: none !important; }
+.card img { width: 40px; filter: none !important; } /* MANTÉM AS CORES REAIS */
 
 /* --- RODAPÉ --- */
 .rodape { padding: 30px 20px; margin-top: auto; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+body.dark-mode .rodape { border-top: 1px solid rgba(0, 0, 0, 0.1); }
 .container-redes-rodape { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
-.icone-rede { width: 32px; transition: 0.3s; }
+
+.icone-rede { width: 32px; filter: none !important; transition: 0.3s; } /* CORES REAIS SEMPRE */
 .icone-rede:hover { transform: translateY(-5px); }
-.rodape p { font-size: 10px; color: #555; }
+
+.rodape p { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 1px; }
