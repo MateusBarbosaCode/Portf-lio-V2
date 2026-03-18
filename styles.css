@@ -4,91 +4,71 @@
 body {
     background-color: #000; color: #fff;
     font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    text-align: center; /* Centraliza textos por padrão */
+    display: flex; flex-direction: column;
+    min-height: 100vh; text-align: center; transition: 0.3s;
 }
+body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 
-/* --- HEADER (IGUAL AO CELULAR) --- */
+/* --- HEADER E MENU (FORCEI O ESTILO CELULAR NO PC) --- */
 .barra-topo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    gap: 15px;
+    display: flex; flex-direction: column;
+    align-items: center; padding: 20px; gap: 15px;
 }
 .logo-link-azul { color: #007bff; text-decoration: none; font-weight: 900; font-size: 24px; text-transform: uppercase; }
-.links { display: flex; gap: 20px; list-style: none; }
-.links a { text-decoration: none; color: #fff; font-weight: 700; font-size: 16px; }
 
-#iconeBotao { width: 22px; filter: invert(1); background: #fff; border-radius: 4px; padding: 2px; }
+.links { 
+    display: flex; align-items: center; 
+    gap: 20px; list-style: none; 
+}
+.links a { text-decoration: none; color: inherit; font-weight: 700; font-size: 16px; }
 
-/* --- CONTEÚDO --- */
+/* --- BOTÃO DE TEMA (SEM FUNDO) --- */
+#meuBotao {
+    background: transparent; border: none;
+    cursor: pointer; display: flex; align-items: center; padding: 0;
+}
+#iconeBotao { 
+    width: 22px; transition: 0.3s; 
+    filter: brightness(0) invert(1); /* Branco no escuro */
+}
+body.dark-mode #iconeBotao { filter: brightness(0); /* Preto no claro */ }
+
+/* --- CONTEÚDO (ESTILO MOBILE NO COMPUTADOR) --- */
 .conteudo-principal {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; padding: 40px 20px;
 }
-
-/* SEÇÃO PERFIL (FOTO ACIMA DO TEXTO IGUAL CELULAR) */
-.secao-perfil {
-    display: flex;
-    flex-direction: column; /* Força a foto ficar em cima no PC também */
-    align-items: center;
-    gap: 20px;
-}
-
-.foto-perfil {
-    width: 150px;
-    height: 150px;
-    border-radius: 15px;
-    object-fit: cover;
-}
-
+.secao-perfil { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.foto-perfil { width: 150px; height: 150px; border-radius: 15px; object-fit: cover; }
 .titulo-monumental { font-size: 28px; font-weight: 900; }
 .destaque-azul { color: #007bff; }
-.subtitulo-autoridade { font-size: 16px; margin: 10px 0; font-weight: normal; }
-.texto-apoio { font-size: 14px; color: #888; }
-
 .botao-cv {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-top: 20px;
+    display: inline-block; padding: 12px 25px; background: #007bff;
+    color: #fff !important; text-decoration: none; border-radius: 8px;
+    font-weight: bold; margin-top: 20px;
 }
 
-/* --- RODAPÉ --- */
+/* --- RODAPÉ E ÍCONES ADAPTÁVEIS --- */
 .rodape {
-    padding: 30px 20px;
+    padding: 30px 20px; margin-top: auto;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+body.dark-mode .rodape { border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
-.container-redes-rodape {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 20px;
+.container-redes-rodape { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
+
+.icone-rede { 
+    width: 32px; transition: 0.3s; 
+    filter: brightness(0) invert(1); /* Branco no escuro */
 }
+body.dark-mode .icone-rede { filter: brightness(0); /* Preto no claro */ }
 
-.icone-rede {
-    width: 32px;
-    filter: brightness(0) invert(1); /* Deixa branco igual celular */
+.icone-rede:hover {
+    transform: translateY(-5px);
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px #007bff);
 }
+body.dark-mode .icone-rede:hover { filter: brightness(0) drop-shadow(0 0 8px #007bff); }
 
-.rodape p {
-    font-size: 10px;
-    color: #555;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+.rodape p { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 1px; }
 
-/* REMOVEMOS O MEDIA QUERY QUE MUDAVA O LAYOUT NO PC */
-/* Agora ele mantém o estilo de coluna em qualquer tamanho de tela */
+/* REMOVIDO: Media queries que separavam os itens no PC, para manter tudo igual ao celular. */
