@@ -19,11 +19,11 @@ body.dark-mode { background-color: #f4f4f4; color: #1a1a1a; }
 #iconeBotao { width: 22px; filter: brightness(0) invert(1); }
 body.dark-mode #iconeBotao { filter: brightness(0); }
 
-/* --- CONTEÚDO ADAPTÁVEL (PC vs MOBILE) --- */
+/* --- CONTEÚDO (FOTO LADO A LADO NO PC) --- */
 .conteudo-principal { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
 
 .secao-perfil { 
-    display: flex; flex-direction: row; /* Lado a lado no PC */
+    display: flex; flex-direction: row; 
     align-items: center; gap: 40px; text-align: left; max-width: 900px;
 }
 
@@ -31,21 +31,23 @@ body.dark-mode #iconeBotao { filter: brightness(0); }
 .titulo-monumental { font-size: 38px; font-weight: 900; }
 .destaque-azul { color: #007bff; }
 
-/* BOTÃO CURRÍCULO */
-.container-cv { margin-top: 20px; }
+/* BOTÃO DE CURRÍCULO IGUAL À FOTO */
+.container-cv { margin-top: 25px; }
 .botao-cv {
     display: inline-block; padding: 12px 30px;
     background-color: #007bff; color: #fff !important;
     text-decoration: none; font-weight: bold; border-radius: 8px;
+    transition: 0.3s;
 }
+.botao-cv:hover { background-color: #0056b3; }
 
-/* MOBILE - TUDO CENTRALIZADO E EMPILHADO */
+/* MOBILE - TUDO EMPILHADO */
 @media (max-width: 768px) {
     .secao-perfil { flex-direction: column; text-align: center; gap: 20px; }
     .titulo-monumental { font-size: 28px; }
 }
 
-/* --- ÍCONES SOCIAIS (CORES ORIGINAIS) --- */
+/* --- ÍCONES SOCIAIS (COR ORIGINAL) --- */
 .container-redes { display: flex; justify-content: center; gap: 30px; margin-bottom: 15px; }
 .icone-rede { width: 32px; filter: none !important; }
 
